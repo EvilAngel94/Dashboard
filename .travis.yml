@@ -1,0 +1,46 @@
+# Docs: https://docs.travis-ci.com/
+#
+# This is a test CI tool. Next step would be to implement different jobs.
+# Meaning, a job to assemble, job to test (perhaps multiple tests) and finally a deploy phase.
+#
+language: java
+
+# Only test with jdk 11
+jdk:
+  - oraclejdk11
+
+#Branches on which the build should start
+branches:
+  # for these branches the build will run
+  only:
+    # specifying that github pages are also build
+    - gh-pages
+    - master
+    - develop
+  # ignore these branches
+  except:
+    - experimental
+
+# Giving permission to Travis to use gradlew
+before_install:
+  - chmod +x gradlew
+
+# lock the module, and assemble the project
+before_cache:
+  - ./gradlew assemble
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+# lookup the cache
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+# changing to the correct directory Example
+#before_script:
+#  - cd testing
+
+# executing the build
+script:
+  - ./gradlew build
