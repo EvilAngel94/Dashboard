@@ -1,4 +1,4 @@
-package purple.lemon.Dashboard;
+package purple.lemon.dashboard;
 
 public class CalculatorJava {
 

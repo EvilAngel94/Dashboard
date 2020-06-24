@@ -1,7 +1,6 @@
-package purple.lemon.Dashboard
+package purple.lemon.dashboard
 
 import spock.lang.Specification
-import purple.lemon.Dashboard.CalculatorJava
 
 class CalculatorJavaTest extends Specification {
 
