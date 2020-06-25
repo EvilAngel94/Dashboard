@@ -5,7 +5,11 @@
 </head>
 <body>
 
-    <p th:text="'Time on the server is: ' + ${date}"></p>
+    <!--/*@thymesVar id="name" type="java.lang.String"*/-->
+    <p th:text="'Welcome '+ ${name} + '!'"></p>
+
+    <!--/*@thymesVar id="date" type="java.time.LocalDate"*/-->
+    <p th:text="'Time on the server is: '+ ${date}"></p>
 
 </body>
 
