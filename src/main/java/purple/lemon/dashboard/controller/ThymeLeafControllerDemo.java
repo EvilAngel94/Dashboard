@@ -20,7 +20,7 @@ public class ThymeLeafControllerDemo {
 
         thymeleafDemo.getGreetings(model);
 
-        return "helloWorld";
+        return "dashboard";
     }
 
 }

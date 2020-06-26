@@ -2,19 +2,7 @@ HELP.md
 .gradle
 
 ### Need to find something differently ###
-build/jacoco
-build/jacocoHtml/utils
-build/jacocoHtml/purple.lemon.dashboard
-build/jacocoHtml/purple.lemon.dashboard.controller
-build/jacocoHtml/jacoco-resources
-build/jacocoHtml/thymeleaf
-build/classes
-build/generated
-build/kotlin
-build/reports
-build/resources
-build/test-results
-build/tmp
+/build
 
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/dashboard.css}"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+</head>
+
+<body>
+
+<form>
+    <div th:class="container">
+        <div th:class="column-left">
+            <!--/*@thymesVar id="valueToInsert" type="java.lang.String"*/-->
+            <textarea th:class="text-container"></textarea>
+        </div>
+        <div th:class="column-right">
+            <!--/*@thymesVar id="name" type="java.lang.String"*/-->
+            <p th:text="'Welcome '+ ${name} + '!'"></p>
+
+            <!--/*@thymesVar id="date" type="java.time.LocalDate"*/-->
+            <p th:text="'Time on the server is: '+ ${date}"></p>
+        </div>
+    </div>
+</form>
+
+</body>
+
+</html>
