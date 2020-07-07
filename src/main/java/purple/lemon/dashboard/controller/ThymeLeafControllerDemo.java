@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import thymeleaf.ThymeleafDemo;
 import thymeleaf.ThymeleafDemoImpl;
 
+/**
+ * Demo purpose
+ */
 @Controller
 public class ThymeLeafControllerDemo {
 
@@ -15,8 +18,8 @@ public class ThymeLeafControllerDemo {
         this.thymeleafDemo = new ThymeleafDemoImpl();
     }
 
-    @GetMapping("/hello")
-    public String sayHello(Model model) {
+    @GetMapping("/")
+    public String welcomeMessage(Model model) {
 
         thymeleafDemo.getGreetings(model);
 
