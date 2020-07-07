@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/384b439c20.js" crossorigin="anonymous"></script>
+    <script th:src="@{/js/dashboard.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/dashboard.css}"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+</head>
+<body>
+<div th:class="column-left" th:fragment="htmlEditor">
+    <div th:class="ribbon">
+        <!-- change size and use titels -->
+        <label>
+            <select onclick="execCommandWithArgument('formatBlock', this.value)">
+                <option value="H1">Title</option>
+                <option value="H2">Heading 1</option>
+                <option value="H3">Heading 2</option>
+                <option value="H4">Heading 3</option>
+            </select>
+        </label>
+        <!-- font size -->
+        <label>
+            <select onclick="execCommandWithArgument('fontSize', this.value)">
+                <option value="2">12</option>
+                <option value="3">14</option>
+                <option value="4">16</option>
+                <option value="5">18</option>
+            </select>
+        </label>
+        <!-- all text markups -->
+        <a href="javascript:void(0)" th:onclick="execCmd('bold')"><img th:src="@{/image/icon-bold.png}"
+                                                                       alt="bold"></a>
+        <a href="javascript:void(0)" th:onclick="execCmd('italic')"><img th:src="@{/image/icon-italic.png}"
+                                                                         alt="italic"></a>
+        <a href="javascript:void(0)" th:onclick="execCmd('underline')"><img
+                th:src="@{/image/icon-underline.png}" alt="underline"></a>
+
+        <!-- alignments of the text -->
+        <a href="javascript:void(0)" th:onclick="execCmd('justifyLeft')"><img
+                th:src="@{/image/icon-align-left.png}" alt="underline"></a>
+        <a href="javascript:void(0)" th:onclick="execCmd('justifyCenter')"><img
+                th:src="@{/image/icon-align-center.png}" alt="underline"></a>
+        <a href="javascript:void(0)" th:onclick="execCmd('justifyRight')"><img
+                th:src="@{/image/icon-align-right.png}" alt="underline"></a>
+        <a href="javascript:void(0)" th:onclick="execCmd('justifyFull')"><img
+                th:src="@{/image/icon-align-justified.png}" alt="underline"></a>
+
+        <!-- different types of lists -->
+        <a href="javascript:void(0)" th:onclick="execCmd('insertUnorderedList')"><img
+                th:src="@{/image/icon-list-ul.png}" alt="underline"></a>
+        <a href="javascript:void(0)" th:onclick="execCmd('insertOrderedList')"><img
+                th:src="@{/image/icon-list-ol.png}" alt="underline"></a>
+    </div>
+    <div th:id="editor" th:contenteditable="true" th:spellcheck="false"></div>
+</div>
+</body>
+</html>
