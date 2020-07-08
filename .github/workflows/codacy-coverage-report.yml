@@ -13,7 +13,8 @@ on:
     branches:
      - master
      - develop
-    
+
+# This job generates the codacy Coverage Report. Should look in the correct folder
 jobs:
   codacy-coverage-reporter:
     runs-on: ubuntu-latest
@@ -24,4 +25,4 @@ jobs:
         uses: codacy/codacy-coverage-reporter-action@master
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: cobertura.xml
+          coverage-reports: CodeCoverage/jacocoTestReport.xml
