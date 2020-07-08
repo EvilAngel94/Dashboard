@@ -55,8 +55,6 @@ test {
     finalizedBy jacocoTestReport
 }
 
-codeCoverage = 'CodeCoverage'
-
 // Test are required to run before generating the report
 jacocoTestReport {
     dependsOn test
@@ -69,10 +67,10 @@ jacocoTestReport {
     doLast {
         copy {
             from "${buildDir}/CodeCoverage/test"
-            if (!file("${codeCoverage}").exists()) {
-                mkdir("${codeCoverage}")
+            if (!file("CodeCoverage").exists()) {
+                mkdir("CodeCoverage")
             }
-            into "${codeCoverage}"
+            into "CodeCoverage"
         }
     }
 }
