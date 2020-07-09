@@ -29,28 +29,37 @@
             </select>
         </label>
         <!-- all text markups -->
-        <a href="javascript:void(0)" th:onclick="execCmd('bold')"><img th:src="@{/image/icon-bold.png}"
+        <a href="javascript:void(0)" th:onclick="execCmd('bold')"><img th:src="@{/image/editor/icon-bold.png}"
+                                                                       th:class="ribbon-element"
                                                                        alt="bold"></a>
-        <a href="javascript:void(0)" th:onclick="execCmd('italic')"><img th:src="@{/image/icon-italic.png}"
+        <a href="javascript:void(0)" th:onclick="execCmd('italic')"><img th:src="@{/image/editor/icon-italic.png}"
+                                                                         th:class="ribbon-element"
                                                                          alt="italic"></a>
-        <a href="javascript:void(0)" th:onclick="execCmd('underline')"><img
-                th:src="@{/image/icon-underline.png}" alt="underline"></a>
+        <a href="javascript:void(0)" th:onclick="execCmd('underline')">
+            <img th:class="ribbon-element"
+                 th:src="@{/image/editor/icon-underline.png}" alt="underline"></a>
 
         <!-- alignments of the text -->
         <a href="javascript:void(0)" th:onclick="execCmd('justifyLeft')"><img
-                th:src="@{/image/icon-align-left.png}" alt="underline"></a>
+                th:class="ribbon-element"
+                th:src="@{/image/editor/icon-align-left.png}" alt="justify Left"></a>
         <a href="javascript:void(0)" th:onclick="execCmd('justifyCenter')"><img
-                th:src="@{/image/icon-align-center.png}" alt="underline"></a>
+                th:class="ribbon-element"
+                th:src="@{/image/editor/icon-align-center.png}" alt="justify center"></a>
         <a href="javascript:void(0)" th:onclick="execCmd('justifyRight')"><img
-                th:src="@{/image/icon-align-right.png}" alt="underline"></a>
+                th:class="ribbon-element"
+                th:src="@{/image/editor/icon-align-right.png}" alt="justify right"></a>
         <a href="javascript:void(0)" th:onclick="execCmd('justifyFull')"><img
-                th:src="@{/image/icon-align-justified.png}" alt="underline"></a>
+                th:class="ribbon-element"
+                th:src="@{/image/editor/icon-align-justified.png}" alt="justify full"></a>
 
         <!-- different types of lists -->
         <a href="javascript:void(0)" th:onclick="execCmd('insertUnorderedList')"><img
-                th:src="@{/image/icon-list-ul.png}" alt="underline"></a>
+                th:class="ribbon-element"
+                th:src="@{/image/editor/icon-list-ul.png}" alt="Unordered list"></a>
         <a href="javascript:void(0)" th:onclick="execCmd('insertOrderedList')"><img
-                th:src="@{/image/icon-list-ol.png}" alt="underline"></a>
+                th:class="ribbon-element"
+                th:src="@{/image/editor/icon-list-ol.png}" alt="ordered list"></a>
     </div>
     <div th:id="editor" th:contenteditable="true" th:spellcheck="false"></div>
 </div>

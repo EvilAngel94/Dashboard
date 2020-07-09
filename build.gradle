@@ -25,12 +25,17 @@ sourceSets {
 
 repositories {
     mavenCentral()
+    maven{
+        url 'https://jitpack.io'
+    }
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-batch'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    // For http requests TODO: upgrade dit naar iets beters? Misschien gewoon via mavenCentral ofzo
+    implementation "com.github.jkcclemens:khttp:0.1.0"
 
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
 
