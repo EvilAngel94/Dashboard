@@ -11,3 +11,8 @@ Furthermore, the application will also only be usabel locally (on localhost some
 ## Options
 - Weatherforecast for Home and Work location
 - ...
+
+
+### Documentation
+Underneath a link to the documentation can be found.
+[Documentation](https://docs.google.com/document/d/1vGZuTfVi3imIKocLeMz2skk_1D1S5_bUTREcNllLrcQ/edit?usp=sharing)
