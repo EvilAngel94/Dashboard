@@ -7,3 +7,7 @@ These are mainly a small text editor to take notes in. Some useful links to othe
 
 At this moment in time, these tools are only redirecting, or showing basic information on the dashboard. 
 Furthermore, the application will also only be usabel locally (on localhost somewhere). This will be further explained once this is implemented.
+
+## Options
+- Weatherforecast for Home and Work location
+- ...
