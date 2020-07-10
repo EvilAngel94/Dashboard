@@ -10,6 +10,6 @@ interface WeatherForecastInteractable {
     /**
      * Retrieve the weather forecast of the home location and work location
      */
-    fun getWeatherForecast(home: String, work: String) : WeatherForecast
+    fun getWeatherForecast(home: String, work: String, apiKey: String) : WeatherForecast
 
 }
