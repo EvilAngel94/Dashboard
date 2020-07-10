@@ -1,7 +1,7 @@
 package interactable.weather
 
 import interactable.WeatherForecastInteractable
-import interactable.weather.CityAndId.Companion.convertLocationToId
+import interactable.weather.CityAndId.Companion.convertCityToId
 import khttp.responses.Response
 import org.json.JSONObject
 import khttp.get as httpGet
@@ -49,7 +49,7 @@ class WeatherForecastCall : WeatherForecastInteractable {
 
     private fun createParameters(location: String, apiKey: String): Map<String, String> {
         return mapOf(
-                "id" to convertLocationToId(location),
+                "id" to convertCityToId(location),
                 "appid" to apiKey,
                 "units" to "metric"
         )
