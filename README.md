@@ -9,8 +9,8 @@ At this moment in time, these tools are only redirecting, or showing basic infor
 Furthermore, the application will also only be usabel locally (on localhost somewhere). This will be further explained once this is implemented.
 
 ## Options
-- Weatherforecast for Home and Work location
-- ...
+  - Weatherforecast for Home and Work location
+  - ...
 
 
 ### Documentation
