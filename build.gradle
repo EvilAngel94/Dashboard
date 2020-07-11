@@ -19,7 +19,7 @@ configurations {
 
 repositories {
     mavenCentral()
-    maven{
+    maven {
         url 'https://jitpack.io'
     }
 }
@@ -42,13 +42,14 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }
     testImplementation 'org.springframework.batch:spring-batch-test'
-    testImplementation 'org.codehaus.groovy:groovy-all:2.4.12'
-    testImplementation 'org.spockframework:spock-core:1.1-groovy-2.4'
+    testImplementation 'org.codehaus.groovy:groovy-all:2.5.10'
+    testImplementation 'org.spockframework:spock-core:1.3-groovy-2.5'
 }
 
 // Test phase, jacocoTestReports will be generated after the tests have ran.
 // DO NOT USE useJUnitPlatform()
 test {
+    useJUnit()
     finalizedBy jacocoTestReport
 }
 
