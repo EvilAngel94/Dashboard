@@ -10,8 +10,6 @@ Furthermore, the application will also only be usabel locally (on localhost some
 
 ## Options
  - Weatherforecast for Home and Work location
- - ...
-
 
 ### Documentation
 On the side a link to the documentation can be found. ->
