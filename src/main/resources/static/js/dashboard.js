@@ -1,5 +1,5 @@
 /*
-This class is responsible for all the scripts needed for the editor.
+    This class is responsible for all the scripts needed for the editor.
  */
 
 function execCommandWithArgument(command, valueToChange) {
