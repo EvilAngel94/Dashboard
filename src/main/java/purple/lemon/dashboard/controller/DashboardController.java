@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import purple.lemon.dashboard.model.WeatherForecastModel;
 
 @RestController
 @RequestMapping("/rest")
@@ -23,10 +24,15 @@ public class DashboardController {
     }
 
     @GetMapping("/weather")
-    public WeatherForecast getWeatherForecast() {
+    public WeatherForecastModel getWeatherForecast() {
         WeatherForecast weatherForecast = weatherForecastInteractable.getWeatherForecast(CityAndId.Zaamslag.name(), CityAndId.Merelbeke.name(), apiKey);
-        System.out.println(weatherForecast);
-
-        return weatherForecast;
+        return determinePathToPictureToDisplay(weatherForecast);
     }
+
+    private WeatherForecastModel determinePathToPictureToDisplay(WeatherForecast weatherForecast) {
+        WeatherForecastModel model = new WeatherForecastModel(weatherForecast);
+
+        return model;
+    }
+
 }
