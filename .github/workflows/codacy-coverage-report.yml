@@ -23,9 +23,11 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
-      - name: Build project
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+      - name: Build project with Gradle
         run: ./gradlew build
-      - name: Codacy coverage reporter
+      - name: Generate Codacy coverage report
         uses: codacy/codacy-coverage-reporter-action@master
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
