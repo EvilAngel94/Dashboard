@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/EvilAngel94/Dashboard.svg?branch=master)](https://travis-ci.org/EvilAngel94/Dashboard)
+[![Travis CI](https://travis-ci.org/EvilAngel94/Dashboard.svg?branch=master)](https://travis-ci.org/EvilAngel94/Dashboard)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/764e12b0a8cf4cd3aa8a8b0f8d4c224d)](https://www.codacy.com/manual/michieldesmet1994/Dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EvilAngel94/Dashboard&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/764e12b0a8cf4cd3aa8a8b0f8d4c224d)](https://www.codacy.com/manual/michieldesmet1994/Dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EvilAngel94/Dashboard&amp;utm_campaign=Badge_Coverage)
 # Dashboard
@@ -9,8 +9,8 @@ At this moment in time, these tools are only redirecting, or showing basic infor
 Furthermore, the application will also only be usabel locally (on localhost somewhere). This will be further explained once this is implemented.
 
 ## Options
-  - Weatherforecast for Home and Work location
-  - ...
+ - Weatherforecast for Home and Work location
+ - ...
 
 
 ### Documentation

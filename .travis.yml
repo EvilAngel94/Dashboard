@@ -5,6 +5,7 @@
 #
 sudo: enabled
 
+# Specify the language for the application
 language: java
 
 # Only test with jdk 11
@@ -26,6 +27,7 @@ branches:
 # Giving permission to Travis to use gradlew
 before_install:
   - chmod +x gradlew
+  - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r .assets[0].browser_download_url)
 
 # lock the module, and assemble the project
 before_cache:
@@ -46,3 +48,6 @@ cache:
 # executing the build
 script:
   - ./gradlew build
+
+after_success:
+  - java -jar ~/codacy-coverage-reporter-assembly-latest.jar report -l Java -r CodeCoverage/jacocoTestReport.xml
