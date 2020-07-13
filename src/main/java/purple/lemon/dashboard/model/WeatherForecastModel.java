@@ -16,6 +16,14 @@ public class WeatherForecastModel {
         return weatherForecast;
     }
 
+    public String getHomeWeatherPicture() {
+        return homeWeatherPicture;
+    }
+
+    public String getWorkWeatherPicture() {
+        return workWeatherPicture;
+    }
+
     public void setHomeWeatherPicture(String homeWeatherPicture) {
         this.homeWeatherPicture = homeWeatherPicture;
     }
