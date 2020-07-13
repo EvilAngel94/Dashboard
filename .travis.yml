@@ -28,7 +28,7 @@ branches:
 # Giving permission to Travis to use gradlew
 before_install:
   - chmod +x gradlew
-  - wget -O ~/codacy-coverage-reporter-assembly-11.0.0.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/27785394)
+  - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r .assets[0].browser_download_url)
 
 # lock the module, and assemble the project
 before_cache:
