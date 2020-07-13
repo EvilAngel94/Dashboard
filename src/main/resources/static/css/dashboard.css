@@ -96,3 +96,38 @@ select {
   height: 220px;
   border-radius: 25%;
 }
+
+.row-element:hover {
+  cursor: pointer;
+}
+
+.row-detail {
+  display: flex;
+  background-color: #a0d2eb;
+  border: solid #4f2f4f 2px;
+  margin: 10px;
+  padding: 4px;
+  border-radius: 8px;
+  height: 150px;
+  width: 70%;
+}
+
+.info-box {
+  margin: 5px;
+  justify-content: space-evenly;
+  background-color: #a0d2eb;
+  border: solid #8458b3 1px;
+  height: 90%;
+  width: 40%;
+}
+
+.info-box-img {
+  float: left;
+  size: auto;
+}
+
+.info-box-p {
+  float: right;
+  font-family: Roboto, serif;
+  font-size: 14px;
+}
