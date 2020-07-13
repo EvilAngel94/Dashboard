@@ -7,7 +7,7 @@
 language: java
 
 os: linux
-dist: xenial
+dist: trusty
 
 # Only test with jdk 11
 jdk:
