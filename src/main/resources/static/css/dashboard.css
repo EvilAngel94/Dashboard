@@ -114,20 +114,22 @@ select {
 
 .info-box {
   margin: 5px;
-  justify-content: space-evenly;
+  justify-content: space-between;
   background-color: #a0d2eb;
   border: solid #8458b3 1px;
   height: 90%;
-  width: 40%;
+  width: 50%;
 }
 
 .info-box-img {
+  display: inline-block;
   float: left;
   size: auto;
 }
 
-.info-box-p {
-  float: right;
+.info-box-content {
+  display: inline-block;
+  list-style-type: none;
   font-family: Roboto, serif;
   font-size: 14px;
 }
