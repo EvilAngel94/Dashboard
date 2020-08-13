@@ -34,6 +34,9 @@ function getWeatherForecast() {
             console.log(error)
             console.log('Something somewhere went wrong. What could it be...?')
         })
+    } else {
+        document.getElementById('row-details').removeChild('info-box')
+        isAlreadyExecuted = false;
     }
 }
 
