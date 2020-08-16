@@ -98,4 +98,3 @@ class WeatherForecastCall : WeatherForecastInteractable {
         return listOf(weatherType, weatherDescription)
     }
 }
-

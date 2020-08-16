@@ -1,7 +1,6 @@
 package interactable.weather
 
-import org.springframework.beans.factory.annotation.Value
-import org.springframework.test.context.TestPropertySource
+
 import spock.lang.Specification
 
 /**

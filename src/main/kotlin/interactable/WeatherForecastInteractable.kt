@@ -3,7 +3,7 @@ package interactable
 import interactable.weather.WeatherForecast
 
 /**
- * This interface is responsible for obtaining the weatherforecast
+ * This interface is responsible for obtaining the weather forecast
  */
 interface WeatherForecastInteractable {
 
