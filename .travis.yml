@@ -42,10 +42,6 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
-# changing to the correct directory Example
-#before_script:
-#  - cd testing
-
 # executing the build
 script:
   - ./gradlew build
