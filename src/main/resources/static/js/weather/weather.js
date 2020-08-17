@@ -5,11 +5,11 @@ var isAlreadyExecuted = false
  */
 function getWeatherForecast() {
     if (!isAlreadyExecuted) {
-        fetch('http://localhost:8080/rest/weather')
+        fetch("http://localhost:8080/rest/weather")
             .then(response => {
-                return response.json()
+                return response.json();
             }).then(
-            data => {
+            (data) => {
                 const weatherRow = document.getElementById("row-details");
                 weatherRow.className = "row-detail";
 
@@ -35,11 +35,10 @@ function getWeatherForecast() {
                 isAlreadyExecuted = true;
             }
         ).catch(error => {
-            console.log(error);
-            console.log('Something somewhere went wrong. What could it be...?');
-        })
+            return error;
+        });
     } else {
-        document.getElementById('row-details').remove();
+        document.getElementById("row-details").remove();
         isAlreadyExecuted = false;
     }
 }
@@ -53,7 +52,7 @@ class WeatherForecast {
      * @param forecast.workTemperature: Double
      * @param forecast.workTemperatureFeelsLike: Double
      */
-    constructor(forecast, homeLocationPicture, workLocationPicture){
+    constructor(forecast, homeLocationPicture, workLocationPicture) {
         this.homePictureLocation = homeLocationPicture;
         this.workPictureLocation = workLocationPicture;
         this.homeLocation = forecast.homeLocation;
@@ -62,12 +61,12 @@ class WeatherForecast {
         this.workLocation = forecast.workLocation;
         this.workTemp = forecast.workTemperature;
         this.workFeelsLikeTemp = forecast.workTemperatureFeelsLike;
-    };
+    }
 }
 
 function createInfoBox(weatherRow, weatherPicture, location, temperature, feelsLikeTemp) {
-    const infoBox = document.createElement('div');
-    infoBox.className = 'info-box';
+    const infoBox = document.createElement("div");
+    infoBox.className = "info-box";
     weatherRow.append(infoBox);
 
     createImageElement(weatherPicture, infoBox);
@@ -75,25 +74,25 @@ function createInfoBox(weatherRow, weatherPicture, location, temperature, feelsL
 }
 
 function createImageElement(weatherPicture, infoBox) {
-    const imgElement = document.createElement('img');
+    const imgElement = document.createElement("img");
     imgElement.src = weatherPicture;
-    imgElement.className = 'info-box-img';
+    imgElement.className = "info-box-img";
     infoBox.append(imgElement);
 }
 
 function createInfoBoxElement(location, temperature, feelsLikeTemp, infoBox) {
-    const contentInfoBox = document.createElement('ul');
-    contentInfoBox.className = 'info-box-content';
+    const contentInfoBox = document.createElement("ul");
+    contentInfoBox.className = "info-box-content";
 
-    const locationElement = document.createElement('li');
+    const locationElement = document.createElement("li");
     locationElement.textContent = location;
     contentInfoBox.append(locationElement);
 
-    const temperatureElement = document.createElement('li');
+    const temperatureElement = document.createElement("li");
     temperatureElement.textContent = "Temperature: " + temperature;
     contentInfoBox.append(temperatureElement);
 
-    const feelsLikeTempElement = document.createElement('li');
+    const feelsLikeTempElement = document.createElement("li");
     feelsLikeTempElement.textContent = "Temperature feels like: " + feelsLikeTemp;
     contentInfoBox.append(feelsLikeTempElement);
 
