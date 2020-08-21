@@ -1,4 +1,4 @@
-let isAlreadyExecuted = false
+let isAlreadyExecuted = false;
 
 /**
  * This function is responsible for displaying the information obtained from the server regarding weather forecast
@@ -6,7 +6,7 @@ let isAlreadyExecuted = false
 function getWeatherForecast() {
     if (!isAlreadyExecuted) {
         fetch("http://localhost:8080/rest/weather")
-            .then(response => {
+            .then((response) => {
                 return response.json();
             }).then(
             (data) => {
@@ -35,7 +35,7 @@ function getWeatherForecast() {
                 );
                 isAlreadyExecuted = true;
             }
-        ).catch(error => {
+        ).catch((error) => {
             return error;
         });
     } else {
