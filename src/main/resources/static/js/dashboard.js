@@ -1,16 +1,21 @@
-/*
-    This class is responsible for all the scripts needed for the editor.
- */
+const _target = "_blank";
 
-function execCommandWithArgument(command, valueToChange) {
-    document.execCommand(command, false, valueToChange);
+function goToMail() {
+    window.open("https://www.gmail.com", _target);
 }
 
-function execCmd(command) {
-    execCommandWithArgument(command, null);
+function goToWorkMail() {
+    window.open("https://www.outlook.com", _target);
 }
 
-// This methods makes sure the content will be saved.
-setInterval(function () {
-    localStorage["text"] = document.getElementById("editor").innerHTML
-}, 1000);
+function goToTodoist() {
+    window.open("https://www.todoist.com", _target);
+}
+
+function goToSketching() {
+    window.open("https://www.autodraw.com/", _target);
+}
+
+function goToDrive(){
+    window.open("https://drive.google.com/drive/my-drive", _target);
+}

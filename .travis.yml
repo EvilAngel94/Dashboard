@@ -28,7 +28,7 @@ branches:
 # Giving permission to Travis to use gradlew
 before_install:
   - chmod +x gradlew
-  - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r .assets[0].browser_download_url)
+  - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl -s https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r '.assets[0].browser_download_url')
 
 # lock the module, and assemble the project
 before_cache:
@@ -41,10 +41,6 @@ cache:
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
-
-# changing to the correct directory Example
-#before_script:
-#  - cd testing
 
 # executing the build
 script:

@@ -3,6 +3,7 @@ HELP.md
 
 ### Need to find something differently ###
 /build
+/CodeCoverage
 
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**

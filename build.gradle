@@ -58,8 +58,6 @@ jacocoTestReport {
     dependsOn test
     reports {
         xml.enabled(true)
-        csv.enabled(false)
-        html.enabled(false)
     }
     //TODO: fix dit en maak dit in een nieuwe task (Zal er al beter uitzien dan)
     doLast {
