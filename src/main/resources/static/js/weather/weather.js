@@ -1,4 +1,4 @@
-var isAlreadyExecuted = false
+let isAlreadyExecuted = false
 
 /**
  * This function is responsible for displaying the information obtained from the server regarding weather forecast
@@ -12,6 +12,7 @@ function getWeatherForecast() {
             (data) => {
                 const weatherRow = document.getElementById("row-details");
                 weatherRow.className = "row-detail";
+                weatherRow.classList.remove("closed");
 
                 const weatherForecast = new WeatherForecast(data.weatherForecast, data.homeWeatherPicture, data.workWeatherPicture);
 
@@ -38,7 +39,13 @@ function getWeatherForecast() {
             return error;
         });
     } else {
-        document.getElementById("row-details").remove();
+        let infoBoxes = document.getElementsByClassName("info-box");
+        for (let i = infoBoxes.length; i > 0; i--) {
+            infoBoxes[i - 1].remove();
+        }
+
+        const weatherRow = document.getElementById("row-details");
+        weatherRow.className = "closed";
         isAlreadyExecuted = false;
     }
 }

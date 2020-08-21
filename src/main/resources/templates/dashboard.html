@@ -15,17 +15,16 @@
         <div th:insert="editor.html :: htmlEditor"></div>
         <div th:class="column-right">
             <div th:class="row">
-                <img th:class="row-element" th:src="@{/image/weather/Sun.png}" alt="Test" th:onclick="getWeatherForecast()">
+                <img th:class="row-element" th:src="@{/image/weather/Sun.png}" alt="Weather Forecast" th:onclick="getWeatherForecast()">
                 <img th:class="row-element" th:src="@{/image/button/mail-btn.png}" alt="Mail" th:onclick="goToMail()">
                 <img th:class="row-element" th:src="@{/image/button/work-mail-btn.png}" alt="WorkMail" th:onclick="goToWorkMail()">
             </div>
-            <div th:id="row-details"></div>
+            <div th:id="row-details" th:class="closed"></div>
             <div th:class="row">
                 <img th:class="row-element" th:src="@{/image/test/placeholder.png}" alt="Google Drive" th:onclick="goToDrive()">
                 <img th:class="row-element" th:src="@{/image/test/placeholder.png}" alt="Sketching" th:onclick="goToSketching()">
                 <img th:class="row-element" th:src="@{/image/test/placeholder.png}" alt="Todoist" th:onclick="goToTodoist()">
             </div>
-            <div th:class="row"></div>
         </div>
     </div>
 </form>
