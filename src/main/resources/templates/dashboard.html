@@ -26,8 +26,10 @@
             </div>
             <div th:id="row-details" th:class="closed"></div>
             <div th:class="row">
-                <img th:class="row-element" th:src="@{/image/test/placeholder.png}" alt="Google Drive"
-                     th:onclick="goToDrive()">
+                <img alt="Google Drive" th:class="row-element" th:onclick="goToDrive()"
+                     onmouseover="setInteractiveGif(this, './image/button/interactive/google-drive-interaction-btn.gif')"
+                     onmouseout="setOriginalPicture(this, '../image/button/google-drive-btn.png')"
+                     th:src="@{/image/button/google-drive-btn.png}">
                 <img th:class="row-element" th:src="@{/image/test/placeholder.png}" alt="Sketching"
                      th:onclick="goToSketching()">
                 <img th:class="row-element" th:src="@{/image/test/placeholder.png}" alt="Todoist"

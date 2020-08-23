@@ -19,3 +19,11 @@ function goToSketching() {
 function goToDrive(){
     window.open("https://drive.google.com/drive/my-drive", _target);
 }
+
+function setInteractiveGif(value, path) {
+    value.src = path;
+}
+
+function setOriginalPicture(value, path) {
+    value.src = path;
+}
