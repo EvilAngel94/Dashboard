@@ -2,7 +2,6 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <title>Dashboard</title>
-    <script src="https://kit.fontawesome.com/384b439c20.js" crossorigin="anonymous"></script>
     <script th:src="@{/js/dashboard.js}"></script>
     <script th:src="@{/js/weather/weather.js}"></script>
     <script th:src="@{/js/editor.js}"></script>
@@ -18,21 +17,34 @@
             <script async src="https://cse.google.com/cse.js?cx=9a90fb5e12c20eb49"></script>
             <div class="gcse-search"></div>
             <div th:class="row">
-                <img th:class="row-element" th:src="@{/image/weather/Sun.png}" alt="Weather Forecast"
+                <img th:class="row-element"
+                     th:src="@{/image/button/weather-forecast-btn.png}"
+                     alt="Weather Forecast"
                      th:onclick="getWeatherForecast()">
-                <img th:class="row-element" th:src="@{/image/button/mail-btn.png}" alt="Mail" th:onclick="goToMail()">
-                <img th:class="row-element" th:src="@{/image/button/work-mail-btn.png}" alt="WorkMail"
+                <img th:class="row-element"
+                     th:src="@{/image/button/mail-btn.png}"
+                     alt="Mail"
+                     th:onclick="goToMail()">
+                <img th:class="row-element"
+                     th:src="@{/image/button/work-mail-btn.png}"
+                     alt="WorkMail"
                      th:onclick="goToWorkMail()">
             </div>
             <div th:id="row-details" th:class="closed"></div>
             <div th:class="row">
-                <img alt="Google Drive" th:class="row-element" th:onclick="goToDrive()"
+                <img alt="Google Drive"
+                     th:class="row-element"
+                     th:onclick="goToDrive()"
                      onmouseover="setInteractiveGif(this, './image/button/interactive/google-drive-interaction-btn.gif')"
                      onmouseout="setOriginalPicture(this, '../image/button/google-drive-btn.png')"
                      th:src="@{/image/button/google-drive-btn.png}">
-                <img th:class="row-element" th:src="@{/image/test/placeholder.png}" alt="Sketching"
+                <img th:class="row-element"
+                     th:src="@{/image/test/placeholder.png}"
+                     alt="Sketching"
                      th:onclick="goToSketching()">
-                <img th:class="row-element" th:src="@{/image/test/placeholder.png}" alt="Todoist"
+                <img th:class="row-element"
+                     th:src="@{/image/test/placeholder.png}"
+                     alt="Todoist"
                      th:onclick="goToTodoist()">
             </div>
         </div>
