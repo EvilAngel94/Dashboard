@@ -24,8 +24,10 @@
                      onmouseout="setOriginalPicture(this, '../image/button/weather-forecast-btn.png')"
                      th:onclick="getWeatherForecast()">
                 <img th:class="row-element"
-                     th:src="@{/image/button/mail-btn.png}"
+                     th:src="@{/image/button/pers-mail-btn.png}"
                      alt="Mail"
+                     onmouseover="setInteractiveGif(this, './image/button/interactive/pers-mail-interaction-btn.gif')"
+                     onmouseout="setOriginalPicture(this, '../image/button/pers-mail-btn.png')"
                      th:onclick="goToMail()">
                 <img th:class="row-element"
                      th:src="@{/image/button/work-mail-btn.png}"
