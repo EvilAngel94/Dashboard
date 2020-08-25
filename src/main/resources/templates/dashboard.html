@@ -32,6 +32,8 @@
                 <img th:class="row-element"
                      th:src="@{/image/button/work-mail-btn.png}"
                      alt="WorkMail"
+                     onmouseover="setInteractiveGif(this, './image/button/interactive/work-mail-interaction-btn.gif')"
+                     onmouseout="setOriginalPicture(this, '../image/button/work-mail-btn.png')"
                      th:onclick="goToWorkMail()">
             </div>
             <div th:id="row-details" th:class="closed"></div>
