@@ -45,8 +45,10 @@
                      onmouseout="setOriginalPicture(this, '../image/button/google-drive-btn.png')"
                      th:src="@{/image/button/google-drive-btn.png}">
                 <img th:class="row-element"
-                     th:src="@{/image/test/placeholder.png}"
+                     th:src="@{/image/button/sketching-btn.png}"
                      alt="Sketching"
+                     onmouseover="setInteractiveGif(this, './image/button/interactive/sketching-interaction-btn.gif')"
+                     onmouseout="setOriginalPicture(this, '../image/button/sketching-btn.png')"
                      th:onclick="goToSketching()">
                 <img th:class="row-element"
                      th:src="@{/image/button/todo-btn.png}"
