@@ -49,8 +49,10 @@
                      alt="Sketching"
                      th:onclick="goToSketching()">
                 <img th:class="row-element"
-                     th:src="@{/image/test/placeholder.png}"
+                     th:src="@{/image/button/todo-btn.png}"
                      alt="Todoist"
+                     onmouseover="setInteractiveGif(this, './image/button/interactive/todo-interaction-btn.gif')"
+                     onmouseout="setOriginalPicture(this, '../image/button/todo-btn.png')"
                      th:onclick="goToTodoist()">
             </div>
         </div>
