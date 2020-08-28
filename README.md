@@ -10,6 +10,11 @@ Furthermore, the application will also only be usabel locally (on localhost some
 
 ## Options
  - Weatherforecast for Home and Work location
+ - Go to your personal mail
+ - Go to your work mail
+ - Go to Google Drive
+ - Go to Auto Draw (a sketching application)
+ - Todoist application
 
 ### Documentation
 On the side a link to the documentation can be found. ->
