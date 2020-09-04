@@ -1,4 +1,4 @@
-package purple.lemon.dashboard.controller.rest;
+package purple.lemon.dashboard.controller.api;
 
 import interactable.WeatherForecastInteractable;
 import interactable.weather.CityAndId;
@@ -12,7 +12,7 @@ import purple.lemon.dashboard.model.WeatherForecastModel;
 import purple.lemon.dashboard.utils.WeatherForecastImageUtil;
 
 @RestController
-@RequestMapping("/rest")
+@RequestMapping("/api")
 public class ButtonController {
 
     @Value("${weather.api.key}")

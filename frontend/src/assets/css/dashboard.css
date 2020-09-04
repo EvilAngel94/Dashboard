@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #e5eaf5;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+body {
+  font-family: Roboto, serif;
+  font-size: 22px;
+  height: 100%;
+  width: 100%;
+}
+
+select {
+  font-family: Roboto, serif;
+}
+
+.container::after {
+  clear: both;
+  content: "";
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.column-left {
+  float: left;
+  height: 95vh;
+  padding: 5px;
+  width: 35%;
+}
+
+.ribbon {
+  background-color: #8458b3;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  padding: 5px;
+}
+
+.ribbon-element,
+select {
+  background-color: #d0bdf4;
+  border: solid #4f2f4f 2px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 5px 0;
+  outline: none;
+  padding: 4px;
+  position: relative;
+}
+
+.ribbon-element {
+  border-radius: 25%;
+}
+
+#editor {
+  background-color: #e5eaf5;
+  border: 2px solid mediumpurple;
+  font-family: Roboto, serif;
+  font-size: 16px;
+  height: 95%;
+  width: 100%;
+}
+
+.column-right {
+  float: right;
+  height: 95vh;
+  padding: 5px;
+  width: 64%;
+}
+
+.row {
+  border-radius: 8px;
+  display: flex;
+  height: 220px;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
+.row-element {
+  background-color: #d0bdf4;
+  border-radius: 25%;
+  border: solid #4f2f4f 2px;
+  display: inline-block;
+  height: 220px;
+  outline: none;
+  padding: 4px;
+  position: relative;
+  width: 220px;
+}
+
+.row-element:hover {
+  cursor: pointer;
+}
+
+.row-detail {
+  background-color: #a0d2eb;
+  border-radius: 8px;
+  border: solid #4f2f4f 2px;
+  display: flex;
+  height: 150px;
+  margin: 10px;
+  padding: 4px;
+  width: 70%;
+}
+
+.info-box {
+  background-color: #a0d2eb;
+  border: solid #8458b3 1px;
+  height: 90%;
+  justify-content: space-between;
+  margin: 5px;
+  width: 50%;
+}
+
+.info-box-img {
+  display: inline-block;
+  float: left;
+  size: auto;
+}
+
+.info-box-content {
+  display: inline-block;
+  font-family: Roboto, serif;
+  font-size: 14px;
+  list-style-type: none;
+}
+
+.hidden {
+  display: none;
+}
