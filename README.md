@@ -19,3 +19,12 @@ Furthermore, the application will also only be usabel locally (on localhost some
 ### Documentation
 On the side a link to the documentation can be found. ->
 [Documentation](https://docs.google.com/document/d/1vGZuTfVi3imIKocLeMz2skk_1D1S5_bUTREcNllLrcQ/edit?usp=sharing)
+
+### Developer note
+To start the application locally you need to execute the following commands.
+
+**Frontend**<br>
+```npm run serve```
+
+**Backend**<br>
+```gradle bootRun```

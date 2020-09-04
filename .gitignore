@@ -25,14 +25,5 @@ HELP.md
 *.ipr
 out/
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-
-### VS Code ###
-.vscode/
-
 src/main/resources/application.properties
+frontend/node_modules
