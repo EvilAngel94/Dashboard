@@ -1,34 +1,31 @@
 <template>
-  <div class="column-left">
-    <div class="ribbon">
-      <!-- change size and use titels -->
-      <label>
-        <select>
-          <option value="H1">Title</option>
-          <option value="H2">Heading 1</option>
-          <option value="H3">Heading 2</option>
-          <option value="H4">Heading 3</option>
-        </select>
-      </label>
-      <!-- font size -->
-      <label>
-        <select>
-          <option value="3">14</option>
-          <option value="4">16</option>
-          <option value="5">18</option>
-        </select>
-      </label>
-    </div>
-    <div id="editor" contenteditable="true" spellcheck="false"></div>
+  <div id="app">
+    <ckeditor :editor="editor" v-model="editorData" :config="editorConfig" class="editor"/>
   </div>
 </template>
 
 <script>
-export default {
-  name: "Editor"
-}
+  import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+  export default {
+    name: 'app',
+    data() {
+      return {
+        editor: ClassicEditor,
+        editorData: '',
+        editorConfig: {}
+      }
+    }
+  }
 </script>
 
 <style scoped>
-
+  .editor {
+    background-color: #e5eaf5;
+    border: 2px solid mediumpurple;
+    font-family: Roboto, serif;
+    font-size: 16px;
+    height: 95%;
+    width: 100%;
+  }
 </style>

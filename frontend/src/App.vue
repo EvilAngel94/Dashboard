@@ -2,7 +2,7 @@
   <div id="app">
     <div class="container">
       <div class="column-left">
-
+        <Editor/>
       </div>
       <div class="column-right">
         <InteractableApp/>
@@ -14,10 +14,12 @@
 <script>
 
   import InteractableApp from "./components/InteractablesApp";
+  import Editor from "./components/Editor";
 
   export default {
     name: 'App',
     components: {
+      Editor,
       InteractableApp
     }
   }
