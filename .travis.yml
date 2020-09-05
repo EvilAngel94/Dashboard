@@ -21,6 +21,7 @@ branches:
     - gh-pages
     - master
     - develop
+    - vue
   # ignore these branches
   except:
     - experimental
