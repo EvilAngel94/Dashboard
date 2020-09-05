@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ckeditor :editor="editor" v-model="editorData" :config="editorConfig" class="editor"/>
+    <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"/>
   </div>
 </template>
 
@@ -19,13 +19,11 @@
   }
 </script>
 
-<style scoped>
-  .editor {
-    background-color: #e5eaf5;
-    border: 2px solid mediumpurple;
-    font-family: Roboto, serif;
-    font-size: 16px;
-    height: 95%;
-    width: 100%;
-  }
+
+<style>
+/* This is the property to change the text editor */
+.ck-editor__editable_inline {
+  height: 900px;
+  width: 100%;
+}
 </style>
