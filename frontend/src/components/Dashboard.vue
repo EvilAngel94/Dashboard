@@ -3,42 +3,38 @@
     <div class="column-right">
       <!--      <script async src="https://cse.google.com/cse.js?cx=9a90fb5e12c20eb49"></script>-->
       <div class="gcse-search"></div>
-      <div v-for="button in buttons" v-bind:key="button.id" class="row">
-<!--        <img class="row-element"-->
-<!--             alt="{{ button.altText }}"-->
-<!--             :src="getImgUrl(button)"-->
-<!--        >-->
+      <div v-for="button in interactables" v-bind:key="button.id" class="row">
+        <div class="row-element">
+<!--          <card :-->
+        </div>
       </div>
-      <!--      <img class="row-element"-->
-      <!--           :src="../assets/image/button/todo-btn.png"-->
-      <!--           alt="Todoist"-->
-      <!--           v-on:mouseover="setInteractiveGif(this, '../image/button/interactive/todo-interaction-btn.gif')"-->
-      <!--           v-on:mouseout="setOriginalPicture(this, '../image/button/todo-btn.png')"-->
-      <!--           v-on:click="goToTodoist()">-->
     </div>
   </div>
 </template>
 
 <script>
-  import ButtonService from '../service/ButtonService';
+  import ButtonService from '../service/InteractableService';
 
   export default {
     name: "Dashboard",
     data() {
       return {
-        buttons: []
+        interactables: [],
+        test: [
+          {
+            name: "todoist",
+            img: "../assets/image/button/todo-btn.png",
+            src: "https://www.todoist.com"
+          }
+        ]
       }
     },
     methods: {
       allButtons() {
-        ButtonService.getAllButtons()
+        ButtonService.getAllInteractables()
           .then(response => {
-            console.log(response.data);
-            // this.buttons = response.data;
+            this.interactables = response.data;
           });
-      },
-      getImgUrl(button) {
-        return button.pathToPicture;
       }
     },
     created() {

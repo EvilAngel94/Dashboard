@@ -18,7 +18,7 @@ public class CourseResource {
         this.courseManagementService = courseManagementService;
     }
 
-    @GetMapping("/instructors/{username}/courses")
+    @GetMapping("/api/{username}/courses")
     public List<CoursesHardcodedService.Course> getAllCourses(@PathVariable String username) {
         return courseManagementService.findAll();
     }

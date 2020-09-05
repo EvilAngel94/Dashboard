@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import purple.lemon.dashboard.model.Button;
+import purple.lemon.dashboard.model.Interactable;
 import purple.lemon.dashboard.model.WeatherForecastModel;
 import purple.lemon.dashboard.utils.WeatherForecastImageUtil;
 
@@ -19,14 +19,14 @@ import java.util.List;
 @CrossOrigin(origins = { "http://localhost:8081" })
 @RestController
 @RequestMapping("/api")
-public class ButtonController {
+public class InteractableController {
 
     @Value("${weather.api.key}")
     private String apiKey;
 
     private final WeatherForecastInteractable weatherForecastInteractable;
 
-    public ButtonController() {
+    public InteractableController() {
         this.weatherForecastInteractable = new WeatherForecastCall();
     }
 
@@ -40,12 +40,12 @@ public class ButtonController {
         return WeatherForecastImageUtil.setWeatherIconLocation(weatherForecast);
     }
 
-    @GetMapping("/buttons")
-    public List<Button> getAllButtons(){
-        ArrayList<Button> buttons = new ArrayList<>();
-        buttons.add(new Button(1, "../image/button/todo-btn.png", "../image/button/interactive/todo-interaction-btn.gif", "todoist"));
-        buttons.add(new Button(2, "./image/button/sketching-btn.png", "./image/button/interactive/sketching-interaction-btn.gif", "sketching"));
-        return buttons;
+    @GetMapping("/interactable")
+    public List<Interactable> getAllInteractables(){
+        ArrayList<Interactable> interactables = new ArrayList<>();
+        interactables.add(new Interactable(1, "../image/button/interactive/todo-interaction-btn.gif", "todoist"));
+        interactables.add(new Interactable(2, "./image/button/interactive/sketching-interaction-btn.gif", "sketching"));
+        return interactables;
     }
 
 }
