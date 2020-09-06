@@ -1,5 +1,6 @@
 <template>
   <div class="row">
+    <!-- https://stackoverflow.com/questions/54408841/vue-js-insert-block-for-every-6th-loop-element -->
     <Interactable
             v-for="interactable in interactables"
             :key="interactable.id"
@@ -9,40 +10,30 @@
 </template>
 
 <script>
-  import Interactable from "./Interactable";
+import Interactable from "./Interactable";
+import InteractableService from "@/service/InteractableService";
 
-  export default {
+export default {
     name: "InteractablesApp",
     components: {
       Interactable
     },
     data() {
       return {
-        interactables: [
-          {
-            id: 1,
-            title: "Todoist",
-            source: "todo-interaction-btn.gif",
-          },
-          {
-            id: 2,
-            title: "Sketching",
-            source: "sketching-interaction-btn.gif"
-          }
-        ]
+        interactables: []
       }
     },
-    // methods: {
-    //   allButtons() {
-    //     InteractableService.getAllInteractables()
-    //       .then(response => {
-    //         this.interactables = response.data;
-    //       });
-    //   }
-    // },
-    // created() {
-    //   this.allButtons();
-    // }
+    methods: {
+      allButtons() {
+        InteractableService.getAllInteractables()
+          .then(response => {
+            this.interactables = response.data;
+          });
+      }
+    },
+    created() {
+      this.allButtons();
+    }
   }
 </script>
 

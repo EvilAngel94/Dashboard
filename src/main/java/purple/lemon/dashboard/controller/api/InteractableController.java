@@ -43,8 +43,12 @@ public class InteractableController {
     @GetMapping("/interactable")
     public List<Interactable> getAllInteractables(){
         ArrayList<Interactable> interactables = new ArrayList<>();
-        interactables.add(new Interactable(1, "../image/button/interactive/todo-interaction-btn.gif", "todoist"));
-        interactables.add(new Interactable(2, "./image/button/interactive/sketching-interaction-btn.gif", "sketching"));
+        interactables.add(new Interactable(1, "todo-interaction-btn.gif", "Todoist", "onClickEvent"));
+        interactables.add(new Interactable(2, "sketching-interaction-btn.gif", "sketching", "onClickEvent"));
+        interactables.add(new Interactable(3, "pers-mail-interaction-btn.gif", "Personal Mail", "onClickEvent"));
+        interactables.add(new Interactable(4, "work-mail-interaction-btn.gif", "Work Mail", "onClickEvent"));
+        interactables.add(new Interactable(5, "google-drive-interaction-btn.gif", "Google Drive", "onClickEvent"));
+        interactables.add(new Interactable(6, "weather-forecast-interaction-btn.gif", "Weather Forecast", "onClickEvent"));
         return interactables;
     }
 
