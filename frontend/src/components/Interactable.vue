@@ -1,7 +1,11 @@
 <template>
   <div class="row-element">
     <div class="row-element-img">
-      <img :src="require(`@/assets/image/button/interactive/${Interactable.source}`)"/>
+      <img
+          :src="require(`@/assets/image/button/${Interactable.placeholderSrc}`)"
+          @mouseover="Interactable.placeholderSrc = Interactable.gif"
+          @mouseleave="Interactable.placeholderSrc = Interactable.src"
+          v-bind:alt="Interactable.title"/>
     </div>
     <div class="row-element-title">
       {{ Interactable.title }}
@@ -19,7 +23,6 @@
 </script>
 
 <style scoped>
-
   .row-element {
     background-color: #d0bdf4;
     border-radius: 25%;

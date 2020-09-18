@@ -23,7 +23,7 @@
 <style>
 /* This is the property to change the text editor */
 .ck-editor__editable_inline {
-  height: 900px;
+  height: 880px;
   width: 100%;
 }
 </style>

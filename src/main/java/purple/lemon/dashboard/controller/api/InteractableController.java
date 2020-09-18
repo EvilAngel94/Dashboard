@@ -43,12 +43,12 @@ public class InteractableController {
     @GetMapping("/interactable")
     public List<Interactable> getAllInteractables(){
         ArrayList<Interactable> interactables = new ArrayList<>();
-        interactables.add(new Interactable(1, "todo-interaction-btn.gif", "Todoist", "onClickEvent"));
-        interactables.add(new Interactable(2, "sketching-interaction-btn.gif", "sketching", "onClickEvent"));
-        interactables.add(new Interactable(3, "pers-mail-interaction-btn.gif", "Personal Mail", "onClickEvent"));
-        interactables.add(new Interactable(4, "work-mail-interaction-btn.gif", "Work Mail", "onClickEvent"));
-        interactables.add(new Interactable(5, "google-drive-interaction-btn.gif", "Google Drive", "onClickEvent"));
-        interactables.add(new Interactable(6, "weather-forecast-interaction-btn.gif", "Weather Forecast", "onClickEvent"));
+        interactables.add(new Interactable(1, "todo-btn.png", "todo-btn.png", "interactive/todo-interaction-btn.gif", "Todoist"));
+        interactables.add(new Interactable(2, "sketching-btn.png", "sketching-btn.png", "interactive/sketching-interaction-btn.gif", "Sketching"));
+        interactables.add(new Interactable(3, "pers-mail-btn.png", "pers-mail-btn.png", "interactive/pers-mail-interaction-btn.gif", "Personal Mail"));
+        interactables.add(new Interactable(4, "work-mail-btn.png", "work-mail-btn.png", "interactive/work-mail-interaction-btn.gif", "Work Mail"));
+        interactables.add(new Interactable(5, "google-drive-btn.png", "google-drive-btn.png", "interactive/google-drive-interaction-btn.gif", "Google Drive"));
+        interactables.add(new Interactable(6, "weather-forecast-btn.png", "weather-forecast-btn.png", "interactive/weather-forecast-interaction-btn.gif", "Weather Forecast"));
         return interactables;
     }
 

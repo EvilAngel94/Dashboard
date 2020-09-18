@@ -2,9 +2,7 @@
   <div id="app">
     <div class="row" :key="row" v-for="row in createRows">
       <div :key="interactableRow" v-for="interactableRow in row">
-        <Interactable
-            :Interactable="interactableRow"
-        />
+        <Interactable :Interactable="interactableRow"/>
       </div>
     </div>
   </div>
@@ -14,6 +12,7 @@
 import Interactable from "./Interactable";
 import InteractableService from "@/service/InteractableService";
 
+const maxInteractablesOnARow = 3;
 const chunk = (arr, size) =>
     arr.reduce((previousValue, _, index) =>
         (index % size) ? previousValue : [...previousValue, arr.slice(index, index + size)], []);
@@ -38,7 +37,7 @@ export default {
   },
   computed: {
     createRows() {
-      return chunk(this.interactables, 4);
+      return chunk(this.interactables, maxInteractablesOnARow);
     }
   },
   created() {

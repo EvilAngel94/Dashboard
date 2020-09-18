@@ -3,30 +3,37 @@ package purple.lemon.dashboard.model;
 public class Interactable {
 
     private final int id;
-    private final String source;
+    private final String placeholderSrc;
+    private final String src;
+    private final String gif;
     private final String title;
-    private final String onClickEvent;
 
-    public Interactable(int id, String source, String title, String onClickEvent) {
+    public Interactable(int id, String placeholderSrc, String src, String gif, String title) {
         this.id = id;
-        this.source = source;
+        this.placeholderSrc = placeholderSrc;
+        this.src = src;
+        this.gif = gif;
         this.title = title;
-        this.onClickEvent = onClickEvent;
     }
 
     public int getId() {
         return id;
     }
 
-    public String getSource() {
-        return source;
+    public String getPlaceholderSrc() {
+        return placeholderSrc;
+    }
+
+    public String getSrc() {
+        return src;
+    }
+
+    public String getGif() {
+        return gif;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public String getOnClickEvent() {
-        return onClickEvent;
-    }
 }
