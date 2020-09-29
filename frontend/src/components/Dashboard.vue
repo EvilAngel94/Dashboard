@@ -1,43 +1,17 @@
 <template>
   <div class="container">
     <div class="column-right">
-      <!--      <script async src="https://cse.google.com/cse.js?cx=9a90fb5e12c20eb49"></script>-->
-      <div class="gcse-search"></div>
-<!--      <div v-for="button in interactables" v-bind:key="button.id" class="row"></div>-->
-      <div></div>
+      <InteractablesApp></InteractablesApp>
     </div>
   </div>
 </template>
 
 <script>
-import ButtonService from '../service/InteractableService';
+import InteractablesApp from "@/components/InteractablesApp";
 
 export default {
   name: "Dashboard",
-  data() {
-    return {
-      interactables: [],
-      test: [
-        {
-          name: "todoist",
-          img: "../assets/image/button/todo-btn.png",
-          gif: "../assets/button/interactive/todo-interaction-btn.gif",
-          src: "https://www.todoist.com"
-        }
-      ]
-    }
-  },
-  methods: {
-    allButtons() {
-      ButtonService.getAllInteractables()
-          .then(response => {
-            this.interactables = response.data;
-          });
-    }
-  },
-  created() {
-    this.allButtons();
-  }
+  components: {InteractablesApp},
 }
 </script>
 
@@ -48,30 +22,6 @@ export default {
   height: 95vh;
   padding: 5px;
   width: 64%;
-}
-
-.row {
-  border-radius: 8px;
-  display: flex;
-  height: 220px;
-  justify-content: space-evenly;
-  margin: 10px;
-}
-
-.row-element {
-  background-color: #d0bdf4;
-  border-radius: 25%;
-  border: solid #4f2f4f 2px;
-  display: inline-block;
-  height: 220px;
-  outline: none;
-  padding: 4px;
-  position: relative;
-  width: 220px;
-}
-
-.row-element:hover {
-  cursor: pointer;
 }
 
 .container::after {

@@ -16,7 +16,7 @@ import purple.lemon.dashboard.utils.WeatherForecastImageUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = { "http://localhost:8081" })
+@CrossOrigin(origins = {"http://localhost:8081"})
 @RestController
 @RequestMapping("/api")
 public class InteractableController {
@@ -32,6 +32,7 @@ public class InteractableController {
 
     /**
      * This method retrieves the WeatherForecast information for the Home location and Work location
+     *
      * @return Weather forecast model which will be interpret by JS to display
      */
     @GetMapping("/weather")
@@ -41,14 +42,14 @@ public class InteractableController {
     }
 
     @GetMapping("/interactable")
-    public List<Interactable> getAllInteractables(){
+    public List<Interactable> getAllInteractables() {
         ArrayList<Interactable> interactables = new ArrayList<>();
-        interactables.add(new Interactable(1, "todo-btn.png", "todo-btn.png", "interactive/todo-interaction-btn.gif", "Todoist", "https://www.todoist.com"));
-        interactables.add(new Interactable(2, "sketching-btn.png", "sketching-btn.png", "interactive/sketching-interaction-btn.gif", "Sketching", "https://www.autodraw.com/"));
-        interactables.add(new Interactable(3, "pers-mail-btn.png", "pers-mail-btn.png", "interactive/pers-mail-interaction-btn.gif", "Personal Mail", "https://www.gmail.com"));
-        interactables.add(new Interactable(4, "work-mail-btn.png", "work-mail-btn.png", "interactive/work-mail-interaction-btn.gif", "Work Mail", "https://www.outlook.com"));
-        interactables.add(new Interactable(5, "google-drive-btn.png", "google-drive-btn.png", "interactive/google-drive-interaction-btn.gif", "Google Drive", "https://drive.google.com/"));
-        interactables.add(new Interactable(6, "weather-forecast-btn.png", "weather-forecast-btn.png", "interactive/weather-forecast-interaction-btn.gif", "Weather Forecast", ""));
+        interactables.add(new Interactable(1, "https://www.todoist.com", "todo-btn.png", "todo-btn.png", "interactive/todo-interaction-btn.gif", "Todoist"));
+        interactables.add(new Interactable(2, "https://www.autodraw.com/", "sketching-btn.png", "sketching-btn.png", "interactive/sketching-interaction-btn.gif", "Sketching"));
+        interactables.add(new Interactable(3, "https://www.gmail.com", "pers-mail-btn.png", "pers-mail-btn.png", "interactive/pers-mail-interaction-btn.gif", "Personal Mail"));
+        interactables.add(new Interactable(4, "https://www.outlook.com", "work-mail-btn.png", "work-mail-btn.png", "interactive/work-mail-interaction-btn.gif", "Work Mail"));
+        interactables.add(new Interactable(5, "https://drive.google.com/", "google-drive-btn.png", "google-drive-btn.png", "interactive/google-drive-interaction-btn.gif", "Google Drive"));
+        interactables.add(new Interactable(6, "", "weather-forecast-btn.png", "weather-forecast-btn.png", "interactive/weather-forecast-interaction-btn.gif", "Weather Forecast"));
         return interactables;
     }
 
