@@ -16,7 +16,7 @@ import purple.lemon.dashboard.utils.WeatherForecastImageUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = {"http://localhost:8081"})
+@CrossOrigin(origins = {"http://localhost:1994"})
 @RestController
 @RequestMapping("/api")
 public class InteractableController {

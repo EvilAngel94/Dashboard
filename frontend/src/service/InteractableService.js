@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const INTERACTABLE_URL = "http://localhost:8080/api/interactable";
+const INTERACTABLE_URL = "http://localhost:1997/api/interactable";
 
 class InteractableService {
   getAllInteractables() {

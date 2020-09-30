@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const WEATHER_FORECAST_URL = "http://localhost:8080/api/weather";
+const WEATHER_FORECAST_URL = "http://localhost:1997/api/weather";
 
 class WeatherForecastService {
     getWeatherForecast() {
