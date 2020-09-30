@@ -18,7 +18,6 @@ branches:
   # for these branches the build will run
   only:
     # specifying that github pages are also build
-    - gh-pages
     - master
     - develop
     - vue
