@@ -1,28 +1,28 @@
 <template>
   <div class="container">
+    <div class="column-left">
+      <Editor/>
+    </div>
     <div class="column-right">
-      <InteractablesApp></InteractablesApp>
+      <InteractableApp/>
     </div>
   </div>
 </template>
 
 <script>
-import InteractablesApp from "@/components/InteractablesApp";
+import InteractableApp from "@/components/InteractablesApp";
+import Editor from "@/components/Editor";
 
 export default {
   name: "Dashboard",
-  components: {InteractablesApp},
+  components: {
+    Editor,
+    InteractableApp
+  }
 }
 </script>
 
 <style scoped>
-
-.column-right {
-  float: right;
-  height: 95vh;
-  padding: 5px;
-  width: 64%;
-}
 
 .container::after {
   clear: both;
@@ -30,6 +30,20 @@ export default {
   display: table;
   height: 100%;
   width: 100%;
+}
+
+.column-left {
+  float: left;
+  height: 95vh;
+  padding: 5px;
+  width: 35%;
+}
+
+.column-right {
+  float: right;
+  height: 95vh;
+  padding: 5px;
+  width: 64%;
 }
 
 .row-detail {
@@ -68,5 +82,4 @@ export default {
 .hidden {
   display: none;
 }
-
 </style>
