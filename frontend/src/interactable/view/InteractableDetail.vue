@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Editor from "@/components/Editor";
+import Editor from "@/editor/Editor";
 
 export default {
   name: "InteractableDetail",

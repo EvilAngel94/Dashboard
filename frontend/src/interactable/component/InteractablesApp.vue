@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import InteractableDataService from "@/dataservice/InteractableDataService";
+import InteractableDataService from "@/interactable/dataservice/InteractableDataService";
 
 const maxInteractablesOnARow = 3;
 const chunk = (arr, size) =>

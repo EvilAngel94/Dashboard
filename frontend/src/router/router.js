@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Dashboard from "@/views/Dashboard";
+import Dashboard from "@/dashboard/Dashboard";
 
 Vue.use(Router);
 
@@ -16,7 +16,7 @@ export default new Router({
       path: "/interactable/:slug",
       name: "InteractableDetail",
       props: true,
-      component: () => import( /* webpackChuckName: "InteractableDetail" */ "../views/InteractableDetail")
+      component: () => import( /* webpackChuckName: "InteractableDetail" */ "../interactable/view/InteractableDetail")
     }
   ]
 });

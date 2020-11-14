@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import InteractableApp from "@/components/InteractablesApp";
-import Editor from "@/components/Editor";
+import InteractableApp from "@/interactable/component/InteractablesApp";
+import Editor from "@/editor/Editor";
 
 export default {
   name: "Dashboard",
