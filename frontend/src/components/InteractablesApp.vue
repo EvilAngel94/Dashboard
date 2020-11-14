@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Interactable from "./Interactable";
-import InteractableService from "@/service/InteractableService";
+import Interactable from "../views/InteractableView";
+import InteractableDataService from "@/dataservice/InteractableDataService";
 
 const maxInteractablesOnARow = 3;
 const chunk = (arr, size) =>
@@ -29,7 +29,7 @@ export default {
   },
   methods: {
     allButtons() {
-      InteractableService.getAllInteractables()
+      InteractableDataService.getAllInteractables()
           .then(response => {
             this.interactables = response.data;
           });
