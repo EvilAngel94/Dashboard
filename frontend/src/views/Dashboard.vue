@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <div class="column-left">
       <Editor/>
     </div>
@@ -23,15 +23,6 @@ export default {
 </script>
 
 <style scoped>
-
-.container::after {
-  clear: both;
-  content: "";
-  display: table;
-  height: 100%;
-  width: 100%;
-}
-
 .column-left {
   float: left;
   height: 95vh;

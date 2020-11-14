@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
+  <div class="container">
     <router-view :key="$route.path"/>
   </div>
 </template>
 
 <script>
-export default { name: 'App' }
+export default {name: 'App'}
 </script>
 
 <style>
@@ -23,6 +23,14 @@ html {
 body {
   font-family: Roboto, serif;
   font-size: 22px;
+  height: 100%;
+  width: 100%;
+}
+
+.container::after {
+  clear: both;
+  content: "";
+  display: table;
   height: 100%;
   width: 100%;
 }
