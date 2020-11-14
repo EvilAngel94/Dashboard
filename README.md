@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/M-ds/Dashboard.svg?branch=master)](https://travis-ci.com/M-ds/Dashboard)
+[![Dashboard Build Status](https://github.com/M-ds/Dashboard/workflows/Dashboard%20CI/badge.svg)](https://github.com/M-ds/Dashboard/actions)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/764e12b0a8cf4cd3aa8a8b0f8d4c224d)](https://www.codacy.com/manual/michieldesmet1994/Dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EvilAngel94/Dashboard&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/764e12b0a8cf4cd3aa8a8b0f8d4c224d)](https://www.codacy.com/manual/michieldesmet1994/Dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EvilAngel94/Dashboard&amp;utm_campaign=Badge_Coverage)
 # Dashboard
