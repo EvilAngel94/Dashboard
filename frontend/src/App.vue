@@ -1,16 +1,11 @@
 <template>
   <div id="app">
-    <dashboard/>
+    <router-view :key="$route.path"/>
   </div>
 </template>
 
 <script>
-import Dashboard from "@/components/Dashboard";
-
-export default {
-  name: 'App',
-  components: {Dashboard}
-}
+export default { name: 'App' }
 </script>
 
 <style>
