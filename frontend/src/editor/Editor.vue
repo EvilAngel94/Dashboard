@@ -6,7 +6,6 @@
 
 <script>
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import getDataFromEditor from './EditorStore';
 
 export default {
   name: 'app',
@@ -18,11 +17,18 @@ export default {
     }
   },
   created() {
-    this.editorData = getDataFromEditor();
+    this.editorData = this.pollAndSaveEditorData();
+  },
+  methods: {
+    pollAndSaveEditorData() {
+      this.editorData = setInterval(() => {
+        this.$store.commit('saveEditorData', this.editorData);
+        this.editorData = this.$store.getters.EDITOR_DATA;
+      }, 2500);
+    }
   }
 }
 </script>
-
 
 <style>
 /* This is the property to change the text editor */
