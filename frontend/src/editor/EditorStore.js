@@ -13,11 +13,7 @@ export const store = new Vuex.Store({
       console.log(state.EDITOR_DATA);
     }
   },
-  actions: {
-    getEditorData(context, data) {
-      context.commit("EDITOR_DATA", data);
-    }
+  getters: {
+    EDITOR_DATA: state => state.EDITOR_DATA
   }
 });
-
-export default store;

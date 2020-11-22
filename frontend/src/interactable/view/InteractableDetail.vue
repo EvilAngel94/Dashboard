@@ -5,7 +5,7 @@
     </div>
     <div class="column-right">
       <h2>Hello new page!</h2>
-      <img :src="require(`@/assets/logo.png`)">
+      <img :src="require(`@/assets/logo.png`)" :alt="test">
       <router-link :to="{name: 'Dashboard'}">
         <h3>Go back to Dashboard</h3>
       </router-link>
@@ -20,6 +20,11 @@ export default {
   name: "InteractableDetail",
   components: {
     Editor
+  },
+  data() {
+    return {
+      test: "test"
+    }
   }
 }
 </script>
