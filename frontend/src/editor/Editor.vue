@@ -1,11 +1,12 @@
 <template>
-  <div id="app">
+  <div id="editor">
     <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"/>
   </div>
 </template>
 
 <script>
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import getDataFromEditor from './EditorStore';
 
 export default {
   name: 'app',
@@ -15,6 +16,9 @@ export default {
       editorData: '',
       editorConfig: {}
     }
+  },
+  created() {
+    this.editorData = getDataFromEditor();
   }
 }
 </script>
