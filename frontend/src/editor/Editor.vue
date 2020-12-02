@@ -1,39 +1,61 @@
 <template>
   <div id="editor">
-    <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"/>
+    <vue-editor v-model="editorData()" :editorToolbar="customToolbar"></vue-editor>
   </div>
 </template>
 
 <script>
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import {VueEditor} from "vue2-editor";
 
 export default {
   name: 'app',
+  components: {
+    VueEditor
+  },
   data() {
     return {
-      editor: ClassicEditor,
-      editorData: '',
-      editorConfig: {}
+      editorData: getEditorData(),
+      customToolbar: [
+        ["bold", "italic", "underline"],
+        [
+          {
+            'size':
+              ['small', false, 'large', 'huge']
+          }
+        ],
+        [
+          {'color': []},
+          {'background': []}
+        ],
+        [
+          {'align': ''},
+          {'align': 'center'},
+          {'align': 'right'},
+          {'align': 'justify'}
+        ],
+        [
+          {list: "ordered"},
+          {list: "bullet"}
+        ],
+        ["image", "code-block"]
+      ]
     }
   },
   created() {
-    this.editorData = this.pollAndSaveEditorData();
+    this.SaveEditorData();
   },
   methods: {
-    pollAndSaveEditorData() {
-      this.editorData = setInterval(() => {
-        this.$store.commit('saveEditorData', this.editorData);
-        this.editorData = this.$store.getters.EDITOR_DATA;
-      }, 2500);
+    SaveEditorData() {
+      setInterval(() => {
+        this.$store.commit("saveEditorData", this.editorData);
+      }, 2000);
     }
+  },
+  computed: {
+    //TODO; Make method to obtian the value every so often. And store...
   }
 }
 </script>
 
 <style>
-/* This is the property to change the text editor */
-.ck-editor__editable_inline {
-  height: 880px;
-  width: 100%;
-}
 </style>
