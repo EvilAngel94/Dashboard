@@ -1,6 +1,6 @@
 <template>
   <div id="editor">
-    <vue-editor v-model="editorData()" :editorToolbar="customToolbar"></vue-editor>
+    <vue-editor v-model="editorData" :editorToolbar="customToolbar"></vue-editor>
   </div>
 </template>
 
@@ -8,30 +8,30 @@
 import {VueEditor} from "vue2-editor";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     VueEditor
   },
   data() {
     return {
-      editorData: getEditorData(),
+      editorData: "",
       customToolbar: [
         ["bold", "italic", "underline"],
         [
           {
-            'size':
-              ['small', false, 'large', 'huge']
+            "size":
+              ["small", false, "large", "huge"]
           }
         ],
         [
-          {'color': []},
-          {'background': []}
+          {"color": []},
+          {"background": []}
         ],
         [
-          {'align': ''},
-          {'align': 'center'},
-          {'align': 'right'},
-          {'align': 'justify'}
+          {"align": ""},
+          {"align": "center"},
+          {"align": "right"},
+          {"align": "justify"}
         ],
         [
           {list: "ordered"},
@@ -43,16 +43,19 @@ export default {
   },
   created() {
     this.SaveEditorData();
+    this.obtainEditorData();
   },
   methods: {
     SaveEditorData() {
       setInterval(() => {
         this.$store.commit("saveEditorData", this.editorData);
       }, 2000);
+    },
+    obtainEditorData() {
+      setInterval(() => {
+        this.editorData = this.$store.commit("obtainData");
+      }, 2000);
     }
-  },
-  computed: {
-    //TODO; Make method to obtian the value every so often. And store...
   }
 }
 </script>
