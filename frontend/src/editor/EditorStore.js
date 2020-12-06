@@ -10,7 +10,6 @@ export const store = new Vuex.Store({
   mutations: {
     saveEditorData(state, data) {
       state.EDITOR_DATA = data;
-      console.log(state.EDITOR_DATA);
     }
   },
   getters: {

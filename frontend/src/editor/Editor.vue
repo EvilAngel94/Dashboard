@@ -43,17 +43,11 @@ export default {
   },
   created() {
     this.SaveEditorData();
-    this.obtainEditorData();
   },
   methods: {
     SaveEditorData() {
       setInterval(() => {
         this.$store.commit("saveEditorData", this.editorData);
-      }, 2000);
-    },
-    obtainEditorData() {
-      setInterval(() => {
-        this.editorData = this.$store.commit("obtainData");
       }, 2000);
     }
   }
