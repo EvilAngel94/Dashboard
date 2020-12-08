@@ -1,8 +1,13 @@
 DROP TABLE IF EXISTS EditorData;
 
-CREATE TABLE EditorContent (
-  Id INT AUTO_INCREMENT  PRIMARY KEY,
-  EditorData varchar(max) DEFAULT NULL
+CREATE TABLE EditorContent
+(
+    Id         INT PRIMARY KEY,
+    EditorData varchar(max) DEFAULT NULL
 );
 
-INSERT INTO EditorContent(EditorData) VALUES ( '' );
+INSERT INTO EditorContent(Id, EditorData)
+VALUES (0, '');
+
+INSERT INTO EditorContent(Id, EditorData)
+VALUES (1, '');

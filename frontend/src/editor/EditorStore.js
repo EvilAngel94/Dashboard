@@ -3,16 +3,19 @@ import Vuex from "vuex";
 
 Vue.use(Vuex);
 
+import EditorDataService from "@/editor/EditorDataService";
+
 export const store = new Vuex.Store({
   state: {
     EDITOR_DATA: ''
   },
   mutations: {
     saveEditorData(state, data) {
-      state.EDITOR_DATA = data;
+      EditorDataService.storeEditorData(data)
+        .then(r => state.EDITOR_DATA = r.data);
     }
   },
   getters: {
-    EDITOR_DATA: state => state.EDITOR_DATA
+    EDITOR_DATA: EditorDataService.getEditorData
   }
 });
