@@ -4,7 +4,7 @@ const EDITOR_BASE_URL = "http://localhost:1997/api/editor";
 
 class EditorDataService {
   getEditorData() {
-    return axios.get(EDITOR_BASE_URL + "/data");
+    return axios.get(EDITOR_BASE_URL + "/content");
   }
 
   storeEditorData(content) {

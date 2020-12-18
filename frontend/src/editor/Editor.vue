@@ -1,6 +1,9 @@
 <template>
   <div id="editor">
-    <vue-editor v-model="editorData" :editorToolbar="customToolbar"></vue-editor>
+    <vue-editor
+      v-model="editorData"
+      :editorToolbar="customToolbar"
+    />
   </div>
 </template>
 
@@ -41,15 +44,19 @@ export default {
       ]
     }
   },
-  created() {
-    this.SaveEditorData();
-  },
   methods: {
-    SaveEditorData() {
+    initializeTheEditor() {
       setInterval(() => {
-        this.$store.commit("saveEditorData", this.editorData);
-      }, 2000);
+        this.$emit("autoSaveEditorData", this.editorData);
+      }, 1000);
+
+      this.$store.dispatch("obtainEditorContent").then((data) => {
+        this.editorData = data.data.editorData
+      });
     }
+  },
+  created() {
+    this.initializeTheEditor()
   }
 }
 </script>

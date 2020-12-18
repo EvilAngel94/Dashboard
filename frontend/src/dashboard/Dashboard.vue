@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="column-left">
-      <Editor/>
+      <Editor @autoSaveEditorData="autoSaveEditorData"/>
     </div>
     <div class="column-right">
       <InteractableApp/>
@@ -18,6 +18,11 @@ export default {
   components: {
     Editor,
     InteractableApp
+  },
+  methods: {
+    autoSaveEditorData(editorData) {
+      this.$store.commit("saveEditorData", editorData);
+    }
   }
 }
 </script>

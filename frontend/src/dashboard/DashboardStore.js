@@ -1,9 +1,8 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import EditorDataService from "@/editor/EditorDataService";
 
 Vue.use(Vuex);
-
-import EditorDataService from "@/editor/EditorDataService";
 
 export const store = new Vuex.Store({
   state: {
@@ -15,7 +14,9 @@ export const store = new Vuex.Store({
         .then(r => state.EDITOR_DATA = r.data);
     }
   },
-  getters: {
-    EDITOR_DATA: EditorDataService.getEditorData
+  actions: {
+    obtainEditorContent() {
+      return EditorDataService.getEditorData();
+    }
   }
 });

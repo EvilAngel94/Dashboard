@@ -63,7 +63,7 @@ export default {
   methods: {
     allButtons() {
       InteractableDataService.getAllInteractables()
-        .then(response => {
+        .then((response) => {
           this.interactables = response.data;
         });
     },

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="column-left">
-      <Editor/>
+      <Editor @autoSaveEditorData="autoSaveEditorData"/>
     </div>
     <div class="column-right">
       <h2>Hello new page!</h2>
@@ -24,6 +24,11 @@ export default {
   data() {
     return {
       test: "test"
+    }
+  },
+  methods: {
+    autoSaveEditorData(editorData) {
+      this.$store.commit("saveEditorData", editorData);
     }
   }
 }

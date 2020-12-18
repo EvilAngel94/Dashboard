@@ -2,7 +2,8 @@ package purple.lemon.dashboard.controller.api;
 
 import org.springframework.web.bind.annotation.*;
 import purple.lemon.dashboard.model.EditorData;
-import purple.lemon.dashboard.repository.EditorDataRepository;
+import purple.lemon.dashboard.model.EditorDataVO;
+import purple.lemon.dashboard.repository.EditorRepository;
 
 import java.util.Optional;
 
@@ -11,24 +12,22 @@ import java.util.Optional;
 @RequestMapping("/api/editor")
 public class EditorController {
 
-    final EditorDataRepository repository;
+    final EditorRepository editorRepository;
 
-    public EditorController(EditorDataRepository repository) {
-        this.repository = repository;
+    public EditorController(EditorRepository editorRepository) {
+        this.editorRepository = editorRepository;
     }
 
-    @GetMapping("/data")
-    public EditorData getEditorData() {
-        Optional<EditorData> optionalEditorData = repository.findById(1);
-        return optionalEditorData.orElseGet(EditorData::empty);
+    @GetMapping("/content")
+    public EditorDataVO getEditorData() {
+        Optional<EditorData> optionalEditorData = editorRepository.getEditorData(1);
+        return optionalEditorData.map(EditorDataVO::transform).orElseGet(EditorDataVO::empty);
     }
 
     @PutMapping("/store")
     public void updateEditorData(@RequestParam(value = "dataToStore") String dataToStore) {
-        Optional<EditorData> optionalEditorData = repository.findById(1);
-        if (optionalEditorData.isPresent()) {
-            repository.save(new EditorData(1, dataToStore));
+        if (dataToStore != null && !dataToStore.trim().isEmpty()) {
+            editorRepository.saveDataContent(1, dataToStore);
         }
-        repository.save(new EditorData(dataToStore));
     }
 }

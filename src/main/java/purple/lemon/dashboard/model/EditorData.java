@@ -1,6 +1,5 @@
 package purple.lemon.dashboard.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -24,8 +23,11 @@ public class EditorData {
     public EditorData() {
     }
 
-    public static EditorData empty() {
-        return new EditorData("");
+    public int getId() {
+        return id;
     }
 
+    public String getEditorData() {
+        return editorData;
+    }
 }
