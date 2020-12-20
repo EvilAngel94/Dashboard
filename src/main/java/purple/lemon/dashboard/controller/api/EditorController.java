@@ -26,7 +26,7 @@ public class EditorController {
 
     @PutMapping("/store")
     public void updateEditorData(@RequestParam(value = "dataToStore") String dataToStore) {
-        if (dataToStore != null && !dataToStore.trim().isEmpty()) {
+        if (dataToStore != null) {
             editorRepository.saveDataContent(1, dataToStore);
         }
     }
