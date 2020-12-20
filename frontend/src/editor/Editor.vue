@@ -60,6 +60,21 @@ export default {
   }
 }
 </script>
-
 <style>
+#editor {
+  border: solid #4f2f4f 2px;
+  background-color: #e5eaf5;
+  height: 95vh;
+}
+
+#quill-container {
+  height: 90vh;
+  border: solid #4f2f4f;
+  border-left: 0;
+  border-right: 0;
+}
+
+.ql-toolbar {
+  background-color: #d0bdf4;
+}
 </style>

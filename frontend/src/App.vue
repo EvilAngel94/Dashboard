@@ -11,6 +11,23 @@ export default {name: 'App'}
 <style>
 * {
   box-sizing: border-box;
+  /* Works on FireFox */
+  scrollbar-width: thin;
+  scrollbar-color: #d0bdf4 #e5eaf5;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #e5eaf5;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #d0bdf4;
+  border: 3px solid #d0bdf4;
 }
 
 html {
