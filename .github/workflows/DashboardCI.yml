@@ -30,4 +30,5 @@ jobs:
     - name: codacy-coverage-reporter
       uses: codacy/codacy-coverage-reporter-action@master
       with:
-        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }} 
+        project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        coverage-reports: jacocoTestReport.xml   
