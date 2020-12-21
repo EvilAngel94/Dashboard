@@ -10,6 +10,7 @@
                 @mouseover="interactable.placeholderSrc = interactable.gif"
                 @mouseleave="interactable.placeholderSrc = interactable.src"
                 v-bind:alt="interactable.title"
+                :slug="interactable.slug"
               />
             </div>
           </router-link>

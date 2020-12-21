@@ -16,7 +16,7 @@ export default new Router({
       path: "/interactable/:slug",
       name: "InteractableDetail",
       props: true,
-      component: () => import( /* webpackChuckName: "InteractableDetail" */ "../interactable/view/InteractableDetail")
+      component: () => import( /* webpackChuckName: "InteractableDetail" */ "../interactable/detail/InteractableDetail")
     }
   ]
 });
