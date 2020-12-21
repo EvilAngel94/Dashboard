@@ -35,6 +35,8 @@ html {
   height: 100%;
   overflow: hidden;
   width: 100%;
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
 }
 
 body {
