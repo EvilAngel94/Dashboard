@@ -14,7 +14,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -23,10 +22,17 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
+
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+
+      - name: create folder for coverage report
+        run: mkdir coverage \
+          cd coverage
+
       - name: Build with Gradle
         run: ./gradlew build
+
       - name: codacy-coverage-reporter
         uses: codacy/codacy-coverage-reporter-action@master
         with:
