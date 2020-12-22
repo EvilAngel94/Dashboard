@@ -26,12 +26,6 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: create folder for coverage report
-        run: mkdir projectCoverage
-
-      - name: move to coverage folder
-        run: cd projectCoverage
-
       - name: Build with Gradle
         run: ./gradlew build
 
@@ -39,4 +33,3 @@ jobs:
         uses: codacy/codacy-coverage-reporter-action@master
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: jacocoTestReport.xml
