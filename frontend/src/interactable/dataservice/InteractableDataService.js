@@ -1,10 +1,14 @@
 import axios from "axios";
 
-const INTERACTABLE_URL = "http://localhost:1997/api/interactable";
+const BASE_URL = "http://localhost:1997/api"
 
 class InteractableDataService {
   getAllInteractables() {
-    return axios.get(INTERACTABLE_URL);
+    return axios.get(BASE_URL + "/interactable");
+  }
+
+  getInteractableDetail(nameOfTheInteractableToLoad) {
+    return axios.get(BASE_URL + "/detail", {params: {detailName: nameOfTheInteractableToLoad}});
   }
 }
 

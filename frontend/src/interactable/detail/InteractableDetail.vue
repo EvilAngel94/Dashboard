@@ -6,9 +6,9 @@
     <div class="column-right">
       <h2>Hello new page!</h2>
       <p>
-        {{ test }}
+        {{ detailSlug }}
       </p>
-      <img :src="require(`@/assets/logo.png`)" :alt="test">
+      <img :src="require(`@/assets/logo.png`)" :alt="slug">
       <router-link :to="{name: 'Dashboard'}">
         <h3>Go back to Dashboard</h3>
       </router-link>
@@ -18,6 +18,7 @@
 
 <script>
 import Editor from "@/editor/Editor";
+import InteractableDataService from "@/interactable/dataservice/InteractableDataService";
 
 export default {
   name: "InteractableDetail",
@@ -28,7 +29,7 @@ export default {
   data() {
     return {
       detailData: null,
-      test: this.slug
+      detailSlug: this.slug
     }
   },
   methods: {
@@ -36,8 +37,14 @@ export default {
       this.$store.commit("saveEditorData", editorData);
     },
     obtainTheDetails(details) {
-      this.$store.dispatch("obtainInteractableDetails", details)
+      this.detailData = InteractableDataService.getInteractableDetail(details)
+        .then((response) => {
+          this.detailData = response.data;
+        });
     }
+  },
+  created() {
+    this.obtainTheDetails(this.detailSlug);
   }
 }
 </script>
