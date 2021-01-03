@@ -1,20 +1,16 @@
 package purple.lemon.dashboard.utils;
 
 import interactable.weather.WeatherForecast;
-import purple.lemon.dashboard.model.WeatherForecastModel;
 
 public final class WeatherForecastImageUtil {
 
-    private static final String BASE_LOCATION_IMAGE = "/image/weather/";
+    private static final String BASE_LOCATION_IMAGE = "image/weather/";
     private static final String SUFFIX = ".png";
 
-    public static WeatherForecastModel setWeatherIconLocation(WeatherForecast weatherForecast) {
-        WeatherForecastModel model = new WeatherForecastModel(weatherForecast);
-
-        model.setHomeWeatherPicture(determineWeatherIconLocation(weatherForecast.getHomeWeatherType()));
-        model.setWorkWeatherPicture(determineWeatherIconLocation(weatherForecast.getWorkWeatherType()));
-
-        return model;
+    public static WeatherForecast setWeatherIconLocation(WeatherForecast weatherForecast) {
+        weatherForecast.setHomeWeatherPicture(determineWeatherIconLocation(weatherForecast.getHomeWeatherType()));
+        weatherForecast.setWorkWeatherPicture(determineWeatherIconLocation(weatherForecast.getWorkWeatherType()));
+        return weatherForecast;
     }
 
     private static String determineWeatherIconLocation(String weatherType) {
