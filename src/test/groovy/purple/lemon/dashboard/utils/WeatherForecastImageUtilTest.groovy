@@ -18,9 +18,9 @@ class WeatherForecastImageUtilTest extends Specification {
         def result = WeatherForecastImageUtil.setWeatherIconLocation(clearWeatherForecast)
 
         then:
-        assert result.weatherForecast != null
-        assert result.homeWeatherPicture == "/image/weather/Sun.png"
-        assert result.workWeatherPicture == "/image/weather/Sun.png"
+        assert result != null
+        assert result.homeWeatherPicture == "image/weather/Sun.png"
+        assert result.workWeatherPicture == "image/weather/Sun.png"
     }
 
     def "Get cloud image when weather is cloudy"() {
@@ -28,9 +28,9 @@ class WeatherForecastImageUtilTest extends Specification {
         def result = WeatherForecastImageUtil.setWeatherIconLocation(cloudyWeatherForecast)
 
         then:
-        assert result.weatherForecast != null
-        assert result.homeWeatherPicture == "/image/weather/Cloud.png"
-        assert result.workWeatherPicture == "/image/weather/Cloud.png"
+        assert result != null
+        assert result.homeWeatherPicture == "image/weather/Cloud.png"
+        assert result.workWeatherPicture == "image/weather/Cloud.png"
     }
 
     def "Get mist image when weather is misty"() {
@@ -38,9 +38,9 @@ class WeatherForecastImageUtilTest extends Specification {
         def result = WeatherForecastImageUtil.setWeatherIconLocation(mistWeatherForecast)
 
         then:
-        assert result.weatherForecast != null
-        assert result.homeWeatherPicture == "/image/weather/Mist.png"
-        assert result.workWeatherPicture == "/image/weather/Mist.png"
+        assert result != null
+        assert result.homeWeatherPicture == "image/weather/Mist.png"
+        assert result.workWeatherPicture == "image/weather/Mist.png"
     }
 
     def "Get shower image when weather is terribly rainy"() {
@@ -48,9 +48,9 @@ class WeatherForecastImageUtilTest extends Specification {
         def result = WeatherForecastImageUtil.setWeatherIconLocation(showersWeatherForecast)
 
         then:
-        assert result.weatherForecast != null
-        assert result.homeWeatherPicture == "/image/weather/Showers.png"
-        assert result.workWeatherPicture == "/image/weather/Showers.png"
+        assert result != null
+        assert result.homeWeatherPicture == "image/weather/Showers.png"
+        assert result.workWeatherPicture == "image/weather/Showers.png"
     }
 
     def "Get drizzle image when there is just a little bit of rain"() {
@@ -58,9 +58,9 @@ class WeatherForecastImageUtilTest extends Specification {
         def result = WeatherForecastImageUtil.setWeatherIconLocation(drizzleWeatherForecast)
 
         then:
-        assert result.weatherForecast != null
-        assert result.homeWeatherPicture == "/image/weather/Drizzle.png"
-        assert result.workWeatherPicture == "/image/weather/Drizzle.png"
+        assert result != null
+        assert result.homeWeatherPicture == "image/weather/Drizzle.png"
+        assert result.workWeatherPicture == "image/weather/Drizzle.png"
     }
 
     def "Get thunderstorm image when thunder is going on"() {
@@ -68,9 +68,9 @@ class WeatherForecastImageUtilTest extends Specification {
         def result = WeatherForecastImageUtil.setWeatherIconLocation(thunderstormWeatherForecast)
 
         then:
-        assert result.weatherForecast != null
-        assert result.homeWeatherPicture == "/image/weather/Thunderstorm.png"
-        assert result.workWeatherPicture == "/image/weather/Thunderstorm.png"
+        assert result != null
+        assert result.homeWeatherPicture == "image/weather/Thunderstorm.png"
+        assert result.workWeatherPicture == "image/weather/Thunderstorm.png"
     }
 
     def "Something went wrong while processing, the String should display this"() {
@@ -78,7 +78,7 @@ class WeatherForecastImageUtilTest extends Specification {
         def result = WeatherForecastImageUtil.setWeatherIconLocation(invalidWeatherForecast)
 
         then:
-        assert result.weatherForecast != null
+        assert result != null
         assert result.homeWeatherPicture == "Could not determine, invalid weather type is provided. Provided weather type: "
         assert result.workWeatherPicture == "Could not determine, invalid weather type is provided. Provided weather type: "
     }
@@ -92,7 +92,9 @@ class WeatherForecastImageUtilTest extends Specification {
                 "Merelbeke",
                 20.0,
                 21.0,
-                weatherType
+                weatherType,
+                "",
+                ""
         )
     }
 }

@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/M-ds/Dashboard.svg?branch=master)](https://travis-ci.com/M-ds/Dashboard)
+![Dashboard CI](https://github.com/M-ds/Dashboard/workflows/Dashboard%20CI/badge.svg?branch=vue)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/764e12b0a8cf4cd3aa8a8b0f8d4c224d)](https://www.codacy.com/manual/michieldesmet1994/Dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EvilAngel94/Dashboard&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/764e12b0a8cf4cd3aa8a8b0f8d4c224d)](https://www.codacy.com/manual/michieldesmet1994/Dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=EvilAngel94/Dashboard&amp;utm_campaign=Badge_Coverage)
 # Dashboard
@@ -19,3 +19,12 @@ Furthermore, the application will also only be usabel locally (on localhost some
 ### Documentation
 On the side a link to the documentation can be found. ->
 [Documentation](https://docs.google.com/document/d/1vGZuTfVi3imIKocLeMz2skk_1D1S5_bUTREcNllLrcQ/edit?usp=sharing)
+
+### Developer note
+To start the application locally you need to execute the following commands.
+
+**Frontend**<br>
+```npm run serve```
+
+**Backend**<br>
+```gradle bootRun```
