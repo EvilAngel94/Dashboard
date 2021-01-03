@@ -5,7 +5,6 @@ on:
     branches:
       - master
       - develop
-      - vue
   pull_request:
     branches:
       - master
