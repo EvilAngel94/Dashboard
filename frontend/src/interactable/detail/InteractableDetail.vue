@@ -3,7 +3,7 @@
     <div class="column-left">
       <Editor @autoSaveEditorData="autoSaveEditorData"/>
     </div>
-    <div class="column-right">
+    <div class="column-right interactable">
       <h2 v-if="detailSlug === 'weather'">Welcome to the weather forecast</h2>
       <div class="row-detail">
         <img class="info-box-img"
@@ -67,6 +67,14 @@ export default {
 </script>
 
 <style scoped>
+h2 {
+  font-weight: bold;
+}
+
+h2, h3 {
+  text-align: center;
+}
+
 .column-left {
   float: left;
   height: 95vh;
@@ -79,6 +87,12 @@ export default {
   height: 95vh;
   padding: 5px;
   width: 64%;
+}
+
+.interactable {
+  max-width: inherit;
+  float: left;
+  margin: 5px;
 }
 
 .row-detail {
@@ -106,9 +120,5 @@ export default {
   display: inline-block;
   float: left;
   size: auto;
-}
-
-.hidden {
-  display: none;
 }
 </style>
