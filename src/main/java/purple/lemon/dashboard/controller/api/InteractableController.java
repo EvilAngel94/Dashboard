@@ -7,7 +7,6 @@ import interactable.weather.WeatherForecastCall;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import purple.lemon.dashboard.model.Interactable;
-import purple.lemon.dashboard.model.WeatherForecastModel;
 import purple.lemon.dashboard.utils.WeatherForecastImageUtil;
 
 import java.util.ArrayList;
@@ -33,7 +32,7 @@ public class InteractableController {
      * @return Weather forecast model which will be interpret by JS to display
      */
     @GetMapping("/detail")
-    public WeatherForecastModel getWeatherForecast(@RequestParam(value = "detailName") String detailName) {
+    public WeatherForecast getWeatherForecast(@RequestParam(value = "detailName") String detailName) {
         if ("weather".equals(detailName)) {
             WeatherForecast weatherForecast = weatherForecastInteractable.getWeatherForecast(CityAndId.Zaamslag.name(), CityAndId.Merelbeke.name(), apiKey);
             return WeatherForecastImageUtil.setWeatherIconLocation(weatherForecast);

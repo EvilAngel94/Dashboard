@@ -15,7 +15,7 @@ class InteractableDetailInfo {
 
   static from(rawData) {
     // debugger; // eslint-disable-line no-debugger
-    const weatherData = rawData.weatherForecast;
+    const weatherData = rawData;
     this.homeLocation = weatherData.homeLocation;
     this.homeTemperature = weatherData.homeTemperature;
     this.homeTemperatureFeelsLike = weatherData.homeTemperatureFeelsLike;
@@ -24,8 +24,8 @@ class InteractableDetailInfo {
     this.workTemperature = weatherData.workTemperature;
     this.workTemperatureFeelsLike = weatherData.workTemperatureFeelsLike;
     this.workWeatherType = weatherData.workWeatherType;
-    this.homeWeatherPicture = rawData.homeWeatherPicture;
-    this.workWeatherPicture = rawData.workWeatherPicture;
+    this.homeWeatherPicture = weatherData.homeWeatherPicture;
+    this.workWeatherPicture = weatherData.workWeatherPicture;
     return InteractableDetailInfo;
   }
 }

@@ -11,5 +11,7 @@ data class WeatherForecast(
         val workLocation: String? = "",
         val workTemperature: Double? = 0.0,
         val workTemperatureFeelsLike: Double? = 0.0,
-        val workWeatherType: String? = "") {
+        val workWeatherType: String? = "",
+        var homeWeatherPicture: String? = "",
+        var workWeatherPicture: String? = "") {
 }

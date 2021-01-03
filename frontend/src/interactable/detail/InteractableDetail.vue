@@ -6,15 +6,25 @@
     <div class="column-right">
       <h2 v-if="detailSlug === 'weather'">Welcome to the weather forecast</h2>
       <div class="row-detail">
-        <p class="row-detail-text">
-          <!-- Create some sort of list in this -->
-          {{ detailData.homeLocation }}
-          {{ detailData.homeTemperature }}
-          {{ detailData.homeTemperatureFeelsLike }}
-          {{ detailData.homeLocation }}
-        </p>
+        <img class="info-box-img"
+             :src="require(`@/assets/${detailData.homeWeatherPicture}`)"
+             :alt="detailData.homeWeatherPicture"/>
+        <ul class="row-detail-text">
+          <li>Location: {{ detailData.homeLocation }}</li>
+          <li>Temperature: {{ detailData.homeTemperature }}</li>
+          <li>Feel like temp: {{ detailData.homeTemperatureFeelsLike }}</li>
+        </ul>
       </div>
-      <img :src="require(`@/assets/logo.png`)" :alt="slug">
+      <div class="row-detail">
+        <img class="info-box-img"
+             :src="require(`@/assets/${detailData.workWeatherPicture}`)"
+             :alt="detailData.workWeatherPicture"/>
+        <ul class="row-detail-text">
+          <li>Location: {{ detailData.workLocation }}</li>
+          <li>Temperature: {{ detailData.workTemperature }}</li>
+          <li>Feel like temp: {{ detailData.workTemperatureFeelsLike }}</li>
+        </ul>
+      </div>
       <router-link :to="{name: 'Dashboard'}">
         <h3>Go back to Dashboard</h3>
       </router-link>
@@ -84,24 +94,18 @@ export default {
 
 .row-detail-text {
   background-color: #a0d2eb;
-  border: solid #8458b3 1px;
   height: 90%;
   justify-content: space-between;
   margin: 5px;
   width: 70%;
+  display: inline-block;
+  list-style-type: none;
 }
 
 .info-box-img {
   display: inline-block;
   float: left;
   size: auto;
-}
-
-.info-box-content {
-  display: inline-block;
-  font-family: Roboto, serif;
-  font-size: 14px;
-  list-style-type: none;
 }
 
 .hidden {
