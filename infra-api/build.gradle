@@ -1,0 +1,15 @@
+plugins {
+    apply plugin: 'io.spring.dependency-management'
+}
+
+dependencies {
+//    implementation project(":application:common")
+
+    // For http requests TODO: upgrade dit naar iets beters? Misschien gewoon via mavenCentral ofzo
+    implementation "com.github.jkcclemens:khttp:0.1.0"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
+    testImplementation "org.codehaus.groovy:groovy-all:2.5.10"
+    testImplementation "org.spockframework:spock-core:1.3-groovy-2.5"
+}

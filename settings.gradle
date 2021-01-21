@@ -1,1 +1,14 @@
+/*
+    Within this we define the different modules we would like to compile
+
+ */
 rootProject.name = 'Dashboard'
+
+include (
+        ":common",
+        ":configuration",
+        ":core",
+        ":entrypoint",
+        ":infra-api",
+        ":infra-jdbc"
+)
