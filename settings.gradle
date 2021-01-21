@@ -1,8 +1,15 @@
 /*
-    Within this we define the different modules we would like to compile
-
+    Within this we define the different modules we would like to compile.
  */
 rootProject.name = 'Dashboard'
+include(
+        ':configuration',
+        ':core',
+        ':entrypoint',
+        ':infra-jdbc',
+        ':infra-api',
+        ':common'
+)
 
 include (
         ":common",

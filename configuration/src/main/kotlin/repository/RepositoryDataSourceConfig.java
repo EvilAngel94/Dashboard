@@ -1,4 +1,4 @@
-package purple.lemon.dashboard.repository;
+package repository;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;

@@ -32,7 +32,7 @@ out/
 *.sln
 *.sw?
 
-src/main/resources/application.properties
+demo/main/resources/application.properties
 frontend/node_modules
 /node_modules
 
