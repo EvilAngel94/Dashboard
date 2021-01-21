@@ -1,9 +1,6 @@
-plugins {
-    apply plugin: 'io.spring.dependency-management'
-}
-
 dependencies {
-//    implementation project(":application:common")
+    implementation project(":common")
+    implementation project(":core")
 
     // For http requests TODO: upgrade dit naar iets beters? Misschien gewoon via mavenCentral ofzo
     implementation "com.github.jkcclemens:khttp:0.1.0"

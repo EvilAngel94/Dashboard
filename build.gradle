@@ -10,6 +10,7 @@ subprojects {
     apply plugin: "groovy"
     apply plugin: "org.jetbrains.kotlin.jvm"
     apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'org.springframework.boot'
 
     group = 'purple.lemon'
     version = '2.0.1-SNAPSHOT'

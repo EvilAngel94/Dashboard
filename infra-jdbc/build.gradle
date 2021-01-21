@@ -1,9 +1,6 @@
-plugins {
-    apply plugin: 'io.spring.dependency-management'
-}
-
 dependencies {
     implementation project(':common')
+    implementation project(":core")
 
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     runtimeOnly 'com.h2database:h2'

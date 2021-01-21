@@ -1,4 +1,11 @@
+plugins {
+    id 'org.springframework.boot'
+}
+
 dependencies {
+    implementation project(":common")
+    implementation project(":core")
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
     testImplementation "org.codehaus.groovy:groovy-all:2.5.10"
