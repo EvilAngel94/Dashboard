@@ -46,6 +46,14 @@ subprojects {
             mavenBom("org.springframework.boot:spring-boot-dependencies:2.1.7.RELEASE")
         }
     }
+
+    ext.libs = [
+            unit_tests: [
+                    "org.codehaus.groovy:groovy-all:2.5.10",
+                    "org.spockframework:spock-core:1.3-groovy-2.5"
+            ]
+    ]
+
 }
 
 configurations {
