@@ -1,5 +1,4 @@
 plugins {
-    id 'org.springframework.boot' version '2.3.6.RELEASE'
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
     id 'org.jetbrains.kotlin.jvm' version '1.3.72'
 }
@@ -10,7 +9,6 @@ subprojects {
     apply plugin: "groovy"
     apply plugin: "org.jetbrains.kotlin.jvm"
     apply plugin: 'io.spring.dependency-management'
-    apply plugin: 'org.springframework.boot'
 
     group = 'purple.lemon'
     version = '2.0.1-SNAPSHOT'
@@ -39,6 +37,13 @@ subprojects {
     compileTestKotlin {
         kotlinOptions {
             jvmTarget = "1.8"
+        }
+    }
+
+    dependencyManagement {
+        imports {
+            // This indicates all the possible plugins we could need with Spring Boot
+            mavenBom("org.springframework.boot:spring-boot-dependencies:2.1.7.RELEASE")
         }
     }
 }

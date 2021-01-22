@@ -5,10 +5,10 @@
 rootProject.name = 'Dashboard'
 
 include (
-        ":common",
-        ":configuration",
-        ":core",
-        ":entrypoint",
-        ":infra-api",
-        ":infra-jdbc"
+        "application:common",
+        "application:configuration",
+        "application:core",
+        "application:entrypoint",
+        "application:infra-api",
+        "application:infra-jdbc"
 )

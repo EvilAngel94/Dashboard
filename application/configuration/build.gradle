@@ -1,10 +1,10 @@
 plugins {
-    id 'org.springframework.boot'
+    id 'org.springframework.boot' version '2.3.6.RELEASE'
 }
 
 dependencies {
-    implementation project(":common")
-    implementation project(":core")
+    implementation project(":application:common")
+    implementation project(":application:core")
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 

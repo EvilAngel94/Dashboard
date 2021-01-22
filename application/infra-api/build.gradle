@@ -1,6 +1,6 @@
 dependencies {
-    implementation project(":common")
-    implementation project(":core")
+    implementation project(":application:common")
+    implementation project(":application:core")
 
     // For http requests TODO: upgrade dit naar iets beters? Misschien gewoon via mavenCentral ofzo
     implementation "com.github.jkcclemens:khttp:0.1.0"
