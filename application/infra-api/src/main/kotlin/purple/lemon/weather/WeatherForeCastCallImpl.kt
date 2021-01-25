@@ -1,10 +1,13 @@
 package purple.lemon.weather
 
+import khttp.requests.Request
 import khttp.responses.Response
 import org.json.JSONObject
 import purple.lemon.model.weatherforecast.CityAndId
 import purple.lemon.model.weatherforecast.CityAndId.Companion.convertCityToId
 import purple.lemon.model.weatherforecast.WeatherForecast
+
+import okhttp3.cal
 
 /**
  * This class is responsible for the external call to the api:
@@ -17,9 +20,11 @@ class WeatherForeCastCallImpl : WeatherForeCastCall {
     /**
      * Main function to obtain all the weather forecast information.
      */
-    override fun getWeatherForecast(home: String, work: String, apiKey: String): WeatherForecast {
-        val weatherForecastHome = callWeatherForecast(home, apiKey)
-        val weatherForecastWork = callWeatherForecast(work, apiKey)
+    override fun getWeatherForecast(weatherForeCastRequest: WeatherForeCastCall.WeatherForeCastRequest): WeatherForecast {
+        val apiKey = weatherForeCastRequest.apiKey
+
+        val weatherForecastHome = callWeatherForecast(weatherForeCastRequest.home, apiKey)
+        val weatherForecastWork = callWeatherForecast(weatherForeCastRequest.work, apiKey)
 
         return WeatherForecast(
                 weatherForecastHome.homeLocation,
@@ -45,6 +50,7 @@ class WeatherForeCastCallImpl : WeatherForeCastCall {
             WeatherForecast()
         }
     }
+    
 
     private fun createParameters(location: String, apiKey: String): Map<String, String> {
         return mapOf(
