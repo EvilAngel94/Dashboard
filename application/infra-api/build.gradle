@@ -2,8 +2,8 @@ dependencies {
     implementation project(":application:common")
     implementation project(":application:core")
 
-    // For http requests TODO: upgrade dit naar iets beters? Misschien gewoon via mavenCentral ofzo
-    implementation "com.github.jkcclemens:khttp:0.1.0"
+    implementation 'com.squareup.okhttp3:okhttp:4.2.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 

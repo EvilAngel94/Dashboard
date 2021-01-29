@@ -8,7 +8,7 @@ subprojects {
     apply plugin: "java"
     apply plugin: "groovy"
     apply plugin: "org.jetbrains.kotlin.jvm"
-    apply plugin: 'io.spring.dependency-management'
+    apply plugin: "io.spring.dependency-management"
 
     group = 'purple.lemon'
     version = '2.0.1-SNAPSHOT'
@@ -22,10 +22,7 @@ subprojects {
     }
 
     repositories {
-        mavenCentral()
-        maven {
-            url 'https://jitpack.io'
-        }
+        jcenter()
     }
 
     compileKotlin {
@@ -43,7 +40,7 @@ subprojects {
     dependencyManagement {
         imports {
             // This indicates all the possible plugins we could need with Spring Boot
-            mavenBom("org.springframework.boot:spring-boot-dependencies:2.1.7.RELEASE")
+            mavenBom("org.springframework.boot:spring-boot-dependencies:2.3.6.RELEASE")
         }
     }
 
