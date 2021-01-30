@@ -8,8 +8,7 @@ interface WeatherForeCastCallApi {
 
     data class WeatherForeCastApiRequest(
             val home: String,
-            val work: String,
-            val apiKey: String
+            val work: String
     )
 
     data class WeatherForeCastApiResponse(
