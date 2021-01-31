@@ -1,6 +1,9 @@
 package purple.lemon.repository
 
 import org.springframework.jdbc.core.JdbcTemplate
+import org.springframework.jdbc.core.RowMapper
+import purple.lemon.model.editor.EditorData
+import java.sql.ResultSet
 import java.util.*
 import javax.sql.DataSource
 
@@ -21,6 +24,18 @@ class EditorRepositoryImpl(
     }
 
     override fun getEditorData(request: EditorRepository.GetDateRequest): Optional<EditorRepository.EditorDataResponse> {
-        TODO()
+        val obtainQuery = "SELECT Id, EditorData FROM EditorContent WHERE Id = ?"
+
+        val result = jdbcTemplate.query(obtainQuery, arrayOf(request.id), rowMapperEditorData())[0]
+        return Optional.of(EditorRepository.EditorDataResponse(result.id, result.data));
+    }
+
+    private fun rowMapperEditorData(): RowMapper<EditorData> {
+        return RowMapper<EditorData> { rs: ResultSet, _: Int ->
+            EditorData(
+                    rs.getInt("Id"),
+                    rs.getString("EditorData")
+            )
+        }
     }
 }
