@@ -23,10 +23,10 @@ class EditorRepositoryImpl(
         )
     }
 
-    override fun getEditorData(request: EditorRepository.GetDateRequest): Optional<EditorRepository.EditorDataResponse> {
+    override fun getEditorData(request: EditorRepository.GetDataRequest): Optional<EditorRepository.EditorDataResponse> {
         val obtainQuery = "SELECT Id, EditorData FROM EditorContent WHERE Id = ?"
 
-        val result = jdbcTemplate.query(obtainQuery, arrayOf(request.id), rowMapperEditorData())[0]
+        val result = jdbcTemplate.query(obtainQuery, arrayOf(request.userId), rowMapperEditorData())[0]
         return Optional.of(EditorRepository.EditorDataResponse(result.id, result.data));
     }
 

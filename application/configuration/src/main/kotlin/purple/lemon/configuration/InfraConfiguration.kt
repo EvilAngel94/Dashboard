@@ -6,6 +6,8 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import purple.lemon.repository.EditorRepository
 import purple.lemon.repository.EditorRepositoryImpl
+import purple.lemon.usecase.editor.EditorUseCase
+import purple.lemon.usecase.editor.EditorUseCaseImpl
 import purple.lemon.usecase.weatherforecast.WeatherForecastUseCase
 import purple.lemon.usecase.weatherforecast.WeatherForecastUseCaseImpl
 import purple.lemon.weather.WeatherForecastCallApi
@@ -45,6 +47,11 @@ open class InfraConfiguration {
     @Bean
     open fun getWeatherForecastUseCase(): WeatherForecastUseCase {
         return WeatherForecastUseCaseImpl(getWeatherForeCastCallApi())
+    }
+
+    @Bean
+    open fun getEditorUseCase(): EditorUseCase {
+        return EditorUseCaseImpl(getEditorRepository())
     }
 
 }

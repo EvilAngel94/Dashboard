@@ -6,15 +6,15 @@ interface EditorRepository {
 
     fun saveDataContent(request: SaveDataRequest)
 
-    fun getEditorData(request: GetDateRequest): Optional<EditorDataResponse>
+    fun getEditorData(request: GetDataRequest): Optional<EditorDataResponse>
 
     data class SaveDataRequest(
             val id: Int,
             val content: String?
     )
 
-    data class GetDateRequest(
-            val id: Int
+    data class GetDataRequest(
+            val userId: Int
     )
 
     data class EditorDataResponse(
