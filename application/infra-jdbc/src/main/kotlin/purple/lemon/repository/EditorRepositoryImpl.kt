@@ -19,7 +19,7 @@ class EditorRepositoryImpl(
         val updated = jdbcTemplate.update(
                 saveQuery,
                 request.content,
-                request.id
+                request.userId
         )
     }
 

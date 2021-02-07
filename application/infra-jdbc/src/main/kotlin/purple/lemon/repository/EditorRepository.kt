@@ -9,7 +9,7 @@ interface EditorRepository {
     fun getEditorData(request: GetDataRequest): Optional<EditorDataResponse>
 
     data class SaveDataRequest(
-            val id: Int,
+            val userId: Int,
             val content: String?
     )
 
@@ -18,7 +18,7 @@ interface EditorRepository {
     )
 
     data class EditorDataResponse(
-            val id: Int,
+            val userId: Int,
             val editorData: String
     )
 }

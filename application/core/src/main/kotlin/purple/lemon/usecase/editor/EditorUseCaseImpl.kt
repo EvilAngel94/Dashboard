@@ -8,12 +8,12 @@ class EditorUseCaseImpl(
 ) : EditorUseCase {
 
     override fun getEditorData(request: EditorUseCase.Request): EditorUseCase.Response {
-        val createEditorRequest = EditorRepository.GetDataRequest(request.userId)
-        val response = editorRepository.getEditorData(createEditorRequest)
+        val editorRequest = EditorRepository.GetDataRequest(request.userId)
+        val response = editorRepository.getEditorData(editorRequest)
         if (response.isPresent) {
             return EditorUseCase.Response(
                     EditorData(
-                            id = response.get().id,
+                            id = response.get().userId,
                             data = response.get().editorData
                     )
             )
@@ -22,6 +22,7 @@ class EditorUseCaseImpl(
     }
 
     override fun saveEditorData(request: EditorUseCase.Request) {
-        TODO("Not yet implemented")
+        val editorRequest = EditorRepository.SaveDataRequest(userId = request.userId, content = request.dataToStore)
+        editorRepository.saveDataContent(editorRequest)
     }
 }
