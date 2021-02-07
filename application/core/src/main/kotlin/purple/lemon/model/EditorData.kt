@@ -1,4 +1,4 @@
-package purple.lemon.model.editor
+package purple.lemon.model
 
 data class EditorData(
         val id: Int,

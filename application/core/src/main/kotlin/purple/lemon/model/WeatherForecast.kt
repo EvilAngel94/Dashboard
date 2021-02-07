@@ -1,4 +1,4 @@
-package purple.lemon.model.weatherforecast
+package purple.lemon.model
 
 data class WeatherForecast(
         val homeLocation: String? = "",

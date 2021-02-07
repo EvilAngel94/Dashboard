@@ -2,7 +2,7 @@ package purple.lemon.repository
 
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.jdbc.core.RowMapper
-import purple.lemon.model.editor.EditorData
+import purple.lemon.model.EditorData
 import java.sql.ResultSet
 import java.util.*
 import javax.sql.DataSource

@@ -5,8 +5,8 @@ import okhttp3.Call
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
-import purple.lemon.model.weatherforecast.CityAndId.Companion.convertCityToId
-import purple.lemon.model.weatherforecast.WeatherForecast
+import purple.lemon.model.CityAndId.Companion.convertCityToId
+import purple.lemon.model.WeatherForecast
 import purple.lemon.weather.response.WeatherForecastResponse
 import java.util.concurrent.TimeUnit
 
@@ -14,23 +14,20 @@ import java.util.concurrent.TimeUnit
  * This class is responsible for the external call to the api:
  * example: http://api.openweathermap.org/data/2.5/weather?id={city id}&appid={API key}
  */
-class WeatherForeCastCallApiImpl(
+class WeatherForecastCallApiImpl(
         private val apiKey: String
-) : WeatherForeCastCallApi {
+) : WeatherForecastCallApi {
 
     private val weatherApiURL = "http://api.openweathermap.org/data/2.5/weather"
     private val gson = Gson()
     private val client = createClient()
 
-    /**
-     * Main function to obtain all the weather forecast information.
-     */
-    override fun getWeatherForecast(weatherForeCastApiRequest: WeatherForeCastCallApi.WeatherForeCastApiRequest): WeatherForeCastCallApi.WeatherForeCastApiResponse {
+    override fun getWeatherForecast(weatherForecastApiRequest: WeatherForecastCallApi.WeatherForecastApiRequest): WeatherForecastCallApi.WeatherForecastApiResponse {
 
-        val weatherForecastHome = callWeatherForecast(apiKey, weatherForeCastApiRequest.home, true)
-        val weatherForecastWork = callWeatherForecast(apiKey, weatherForeCastApiRequest.work, false)
+        val weatherForecastHome = callWeatherForecast(apiKey, weatherForecastApiRequest.home, true)
+        val weatherForecastWork = callWeatherForecast(apiKey, weatherForecastApiRequest.work, false)
 
-        return WeatherForeCastCallApi.WeatherForeCastApiResponse(
+        return WeatherForecastCallApi.WeatherForecastApiResponse(
                 WeatherForecast(
                         weatherForecastHome.homeLocation,
                         weatherForecastHome.homeTemperature,

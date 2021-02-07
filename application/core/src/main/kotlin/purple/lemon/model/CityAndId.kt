@@ -1,4 +1,4 @@
-package purple.lemon.model.weatherforecast
+package purple.lemon.model
 
 /**
  * This Enum is responsible for co-relating a city with their ID. This is based on the WeatherApi data.

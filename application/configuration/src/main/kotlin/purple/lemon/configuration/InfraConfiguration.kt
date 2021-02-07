@@ -6,8 +6,10 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import purple.lemon.repository.EditorRepository
 import purple.lemon.repository.EditorRepositoryImpl
-import purple.lemon.weather.WeatherForeCastCallApi
-import purple.lemon.weather.WeatherForeCastCallApiImpl
+import purple.lemon.usecase.weatherforecast.WeatherForecastUseCase
+import purple.lemon.usecase.weatherforecast.WeatherForecastUseCaseImpl
+import purple.lemon.weather.WeatherForecastCallApi
+import purple.lemon.weather.WeatherForecastCallApiImpl
 
 @Configuration
 open class InfraConfiguration {
@@ -25,8 +27,8 @@ open class InfraConfiguration {
     private val weatherApiKey: String = ""
 
     @Bean
-    open fun getWeatherForeCastCallApi(): WeatherForeCastCallApi {
-        return WeatherForeCastCallApiImpl(weatherApiKey)
+    open fun getWeatherForeCastCallApi(): WeatherForecastCallApi {
+        return WeatherForecastCallApiImpl(weatherApiKey)
     }
 
     @Bean
@@ -38,6 +40,11 @@ open class InfraConfiguration {
                         .password(password)
                         .build()
         )
+    }
+
+    @Bean
+    open fun getWeatherForecastUseCase(): WeatherForecastUseCase {
+        return WeatherForecastUseCaseImpl(getWeatherForeCastCallApi())
     }
 
 }
