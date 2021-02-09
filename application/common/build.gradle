@@ -1,5 +1,4 @@
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-
+    implementation libs.kotlin
     testImplementation libs.unit_tests
 }

@@ -10,7 +10,7 @@ dependencies {
 
     // This is necessary to work with Spring boot.
     implementation 'org.springframework.boot:spring-boot-starter'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 
+    implementation libs.kotlin
     testImplementation libs.unit_tests
 }

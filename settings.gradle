@@ -1,6 +1,5 @@
 /*
     Within this we define the different modules we would like to compile
-
  */
 rootProject.name = 'Dashboard'
 
