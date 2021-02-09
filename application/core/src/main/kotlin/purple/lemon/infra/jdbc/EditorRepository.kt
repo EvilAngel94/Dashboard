@@ -1,4 +1,4 @@
-package purple.lemon.repository
+package purple.lemon.infra.jdbc
 
 import java.util.*
 

@@ -1,4 +1,4 @@
-package purple.lemon.weather
+package purple.lemon.infra.api
 
 import purple.lemon.model.WeatherForecast
 

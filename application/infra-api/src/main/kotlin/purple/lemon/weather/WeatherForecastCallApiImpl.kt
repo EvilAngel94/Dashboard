@@ -5,6 +5,7 @@ import okhttp3.Call
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import purple.lemon.infra.api.WeatherForecastCallApi
 import purple.lemon.model.CityAndId.Companion.convertCityToId
 import purple.lemon.model.WeatherForecast
 import purple.lemon.weather.response.WeatherForecastResponse

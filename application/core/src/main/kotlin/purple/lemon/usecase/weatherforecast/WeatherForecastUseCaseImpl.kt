@@ -1,7 +1,7 @@
 package purple.lemon.usecase.weatherforecast
 
 import purple.lemon.model.WeatherForecast
-import purple.lemon.weather.WeatherForecastCallApi
+import purple.lemon.infra.api.WeatherForecastCallApi
 
 class WeatherForecastUseCaseImpl(
         private val weatherForecastCallApi: WeatherForecastCallApi

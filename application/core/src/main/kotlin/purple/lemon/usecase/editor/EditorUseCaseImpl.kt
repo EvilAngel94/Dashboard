@@ -1,7 +1,7 @@
 package purple.lemon.usecase.editor
 
 import purple.lemon.model.EditorData
-import purple.lemon.repository.EditorRepository
+import purple.lemon.infra.jdbc.EditorRepository
 
 class EditorUseCaseImpl(
         private val editorRepository: EditorRepository
