@@ -17,7 +17,7 @@ class EditorRepositoryImpl(
     override fun saveDataContent(request: EditorRepository.SaveDataRequest) {
         //TODO: Check if the entry is already in the database. Otherwise don't update but insert.
         val saveQuery = "UPDATE EditorContent SET EditorData = ? WHERE Id = ?"
-        val updated = jdbcTemplate.update(
+        jdbcTemplate.update(
                 saveQuery,
                 request.content,
                 request.userId

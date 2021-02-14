@@ -1,18 +1,16 @@
 plugins {
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
-    id "org.jetbrains.kotlin.jvm" version "1.4.21"
+//    id "org.jetbrains.kotlin.jvm" version "1.4.21"
+    id "org.jetbrains.kotlin.jvm" version "1.3.72"
 }
 
 allprojects {
 
-    apply plugin: "java"
-    apply plugin: "groovy"
     apply plugin: "org.jetbrains.kotlin.jvm"
     apply plugin: "io.spring.dependency-management"
 
     group = 'purple.lemon'
     version = '2.0.1-SNAPSHOT'
-    sourceCompatibility = '1.8'
 
     // Test phase, jacocoTestReports will be generated after the tests have ran.
 // DO NOT USE useJUnitPlatform()
@@ -23,18 +21,6 @@ allprojects {
 
     repositories {
         jcenter()
-    }
-
-    compileKotlin {
-        kotlinOptions {
-            jvmTarget = "1.8"
-        }
-    }
-
-    compileTestKotlin {
-        kotlinOptions {
-            jvmTarget = "1.8"
-        }
     }
 
     configurations {
@@ -50,12 +36,20 @@ allprojects {
         }
     }
 
+    compileKotlin {
+        kotlinOptions {
+            jvmTarget = "11"
+        }
+    }
+
+    compileTestKotlin {
+        kotlinOptions {
+            jvmTarget = "11"
+        }
+    }
+
     ext.libs = [
-            unit_tests: [
-                    "org.codehaus.groovy:groovy-all:2.5.10",
-                    "org.spockframework:spock-core:1.3-groovy-2.5"
-            ],
-            kotlin    : [
+            kotlin: [
                     "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
             ]
     ]

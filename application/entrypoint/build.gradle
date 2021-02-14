@@ -5,5 +5,4 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
     implementation libs.kotlin
-    testImplementation libs.unit_tests
 }

@@ -2,6 +2,14 @@
 
 ### Need to find something differently ###
 /build
+application/build
+application/common/build
+application/configuration/build
+application/core/build
+application/entrypoint/build
+application/infra-api/build
+application/infra-jdbc/build
+
 /CodeCoverage
 
 !gradle/wrapper/gradle-wrapper.jar

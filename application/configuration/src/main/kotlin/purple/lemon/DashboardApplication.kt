@@ -1,12 +1,16 @@
 package purple.lemon
 
-import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.runApplication
 
 @SpringBootApplication
 open class DashboardApplication {
 
-    fun main(args: Array<String>) {
-        SpringApplication.run(DashboardApplication::class.java, *args)
+    companion object {
+
+        @JvmStatic
+        fun main(args: Array<String>) {
+            runApplication<DashboardApplication>(*args)
+        }
     }
 }
