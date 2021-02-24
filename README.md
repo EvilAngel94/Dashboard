@@ -28,3 +28,12 @@ To start the application locally you need to execute the following commands.
 
 **Backend**<br>
 ```gradle bootRun```
+
+**Setup of database**<br>
+ - create the database ```sudo docker build -t dashboard-dev-db .```
+ - run the docker instance: ```docker run -d --name dashboard-db-container -p 5555:5432 dashboard-dev-db```
+ 
+ TODO:
+ Look into docker-compose and how that works. 
+
+ 
