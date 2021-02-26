@@ -9,7 +9,7 @@ At this moment in time, these tools are only redirecting, or showing basic infor
 Furthermore, the application will also only be usabel locally (on localhost somewhere). This will be further explained once this is implemented.
 
 ## Options
- - Weatherforecast for Home and Work location
+ - Weather forecast for Home and Work location
  - Go to your personal mail
  - Go to your work mail
  - Go to Google Drive
@@ -28,3 +28,14 @@ To start the application locally you need to execute the following commands.
 
 **Backend**<br>
 ```gradle bootRun```
+
+**Setup of database**<br>
+ - create the database ```sudo docker build -t dashboard-dev-db .```
+ - run the docker instance: ```docker run -d --name dashboard-db-container -p 5555:5432 dashboard-dev-db```
+ 
+**Run the database**<br>
+if the previous setup is done, you are now able to run ```docker start dashboard-db-container```
+ 
+**Todo**
+ - Look into docker-compose and how that works.
+ - Remove H2 database with PostGres 
