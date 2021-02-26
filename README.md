@@ -33,6 +33,8 @@ To start the application locally you need to execute the following commands.
  - create the database ```sudo docker build -t dashboard-dev-db .```
  - run the docker instance: ```docker run -d --name dashboard-db-container -p 5555:5432 dashboard-dev-db```
  
+**Run the database**<br>
+if the previous setup is done, you are now able to run ```docker start dashboard-db-container```
  TODO:
  Look into docker-compose and how that works. 
 
