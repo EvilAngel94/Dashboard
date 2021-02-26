@@ -8,6 +8,7 @@ CREATE TABLE Interactable (
     title VARCHAR(255)
 )
 
+-- Insert some base values in the interactable table
 INSERT INTO interactable
 VALUES (1, 'https://www.todoist.com', 'todo-btn.png', 'todo-btn.png', '', 'interactive/todo-interaction-btn.gif', 'Todoist'),
  (2, 'https://www.autodraw.com/', 'sketching-btn.png', 'sketching-btn.png', '', 'interactive/sketching-interaction-btn.gif', 'Sketching'),

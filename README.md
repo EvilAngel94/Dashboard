@@ -9,7 +9,7 @@ At this moment in time, these tools are only redirecting, or showing basic infor
 Furthermore, the application will also only be usabel locally (on localhost somewhere). This will be further explained once this is implemented.
 
 ## Options
- - Weatherforecast for Home and Work location
+ - Weather forecast for Home and Work location
  - Go to your personal mail
  - Go to your work mail
  - Go to Google Drive
@@ -35,7 +35,7 @@ To start the application locally you need to execute the following commands.
  
 **Run the database**<br>
 if the previous setup is done, you are now able to run ```docker start dashboard-db-container```
- TODO:
- Look into docker-compose and how that works. 
-
  
+**Todo**
+ - Look into docker-compose and how that works.
+ - Remove H2 database with PostGres 
